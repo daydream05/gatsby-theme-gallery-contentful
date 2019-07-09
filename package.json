@@ -9,9 +9,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@mdx-js/react": "^1.0.21",
     "gatsby": "^2.13.10",
+    "gatsby-plugin-theme-ui": "^0.2.6",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "theme-ui": "^0.2.10"
   },
   "devDependencies": {
     "gatsby": "^2.13.10",
