@@ -1,0 +1,21 @@
+{
+  "name": "gatsby-theme-gallery-contentful",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^2.13.10",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "gatsby": "^2.13.10",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
