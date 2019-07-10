@@ -14,7 +14,7 @@ const Modal = (props) => {
 
   const [showDialog, setShowDialog] = useState(isOpen)
   const data = useStaticQuery(photoQuery)
-  const photos = data.allContentfulPhoto.edges.map(e => e.node)
+  const photos = data.contentfulGallery.media
   
   useEffect(() => {
     mousetrap.bind(`left`, next)
@@ -90,9 +90,15 @@ const Modal = (props) => {
         css={css({
           mt: [0],
           width: `50vw`,
+          height: `80vh`,
           maxWidth: `50vw`,
           p: 0,
           background: `unset`,
+          position: `absolute`,
+          mx: `auto`,
+          left: 0,
+          right: 0,
+          top: [4],
         })}
       >
         {children}
@@ -103,10 +109,9 @@ const Modal = (props) => {
 
 const photoQuery = graphql`
   query {
-    allContentfulPhoto {
-      edges {
-        node {
-          title
+    contentfulGallery {
+      media {
+        ... on ContentfulPhoto {
           fields {
             path
           }
