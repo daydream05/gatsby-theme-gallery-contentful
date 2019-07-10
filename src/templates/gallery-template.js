@@ -1,33 +1,9 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import { css, Styled } from 'theme-ui'
+import { graphql } from 'gatsby'
 
-const Gallery = ({ data }) => {
-  console.log(data)
+import Gallery from '../components/gallery'
 
-  return (
-    <div
-      css={css({
-        pt: [4],
-      })}
-    >
-      <Styled.h1
-        css={css({
-          color: `accent`,
-          textAlign: `center`,
-        })}
-      >Gallery</Styled.h1>
-      {data.allContentfulPhoto.edges.map(({ node }) => {
-        return (
-          <Link
-            key={node.id}
-            to={node.fields.path}
-          >{node.title}</Link>
-        )
-      })}
-    </div>
-  )
-}
+export default Gallery
 
 export const galleryQuery = graphql`
   query {
@@ -36,6 +12,14 @@ export const galleryQuery = graphql`
         node {
           id
           title
+          media {
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
+            }
+            fixed {
+              ...GatsbyContentfulFixed_withWebp
+            }
+          }
           fields {
             path
           }
@@ -44,5 +28,3 @@ export const galleryQuery = graphql`
     }
   }
 `
-
-export default Gallery
