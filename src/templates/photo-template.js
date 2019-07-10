@@ -8,7 +8,7 @@ export const photoTemplateQuery = graphql`
     contentfulPhoto(fields: { slug: { eq: $slug }}) {
       title
       media {
-        fluid(maxHeight: 300) {
+        fluid {
           ...GatsbyContentfulFluid_withWebp
         }
         fixed(height: 600) {

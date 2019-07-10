@@ -10,10 +10,7 @@ import "@reach/dialog/styles.css"
 const Modal = (props) => {
   const { isOpen, location, children } = props
 
-  console.log(`shouldBeOpen: ${isOpen}`)
-
   const [showDialog, setShowDialog] = useState(isOpen)
-  console.log(`showDialog: ${showDialog}`)
 
   return (
     <DialogOverlay
@@ -24,11 +21,18 @@ const Modal = (props) => {
       }}
       css={css({
         zIndex: `modal`,
-        background: "hsla(0, 100%, 100%, 0.5)",
+        background: "hsla(0, 0, 0, 0.8)",
         m: 0
       })}
     >
       <DialogContent
+        css={css({
+          mt: [0],
+          width: `50vw`,
+          maxWidth: `50vw`,
+          p: 0,
+          background: `unset`,
+        })}
       >
         {children}
       </DialogContent>

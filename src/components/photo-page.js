@@ -23,9 +23,21 @@ const PhotoPage = ({ data, location }) => {
   return (
     <Layout location={location} isModal={isModal}>
       <div
+        css={css({
+          display: `flex`,
+          alignItems: `center`,
+          height: `calc(100vh - ${theme.headerHeight})`,
+          width: `100%`,
+          overflowY: `hidden`,
+        })}
       >
-        <Styled.h1>{title}</Styled.h1>
-        <Img fixed={media.fixed} alt={media.title} />
+        <Img
+          fluid={media.fluid}
+          alt={media.title}
+          css={css({
+            width: `100%`,
+          })}
+        />
       </div>
     </Layout>
   );
