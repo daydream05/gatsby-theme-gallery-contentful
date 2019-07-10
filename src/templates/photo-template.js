@@ -1,18 +1,7 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import { Styled } from 'theme-ui'
+import PhotoPage from '../components/photo-page'
 
-const PhotoTemplate = ({ data }) => {
-  const { title, media } = data.contentfulPhoto
-
-  return (
-    <div>
-      <Styled.h1>{title}</Styled.h1>
-      <Img fluid={media.fluid} alt={media.title} />
-    </div>
-  )
-}
+export default PhotoPage
 
 export const photoTemplateQuery = graphql`
   query($slug: String!) {
@@ -29,5 +18,3 @@ export const photoTemplateQuery = graphql`
     }
   }
 `
-
-export default PhotoTemplate

@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import Gallery from '../components/gallery'
+import GalleryPage from '../components/gallery-page'
 
-export default Gallery
+export default GalleryPage
 
 export const galleryQuery = graphql`
   query {

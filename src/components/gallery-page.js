@@ -5,7 +5,7 @@ import { css, Styled } from 'theme-ui'
 
 import Masonry from './masonry'
 
-const Gallery = ({ data }) => {
+const GalleryPage = ({ data }) => {
   return (
     <div
       css={css({
@@ -33,4 +33,4 @@ const Gallery = ({ data }) => {
   )
 }
 
-export default Gallery
+export default GalleryPage
