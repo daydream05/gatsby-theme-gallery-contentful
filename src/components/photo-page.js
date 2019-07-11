@@ -31,7 +31,7 @@ const PhotoPage = ({ data, location }) => {
           css={css({
             display: `inline-block`,
             position: `relative`,
-            cursor: `pointer`,
+            cursor: `zoom-in`,
           })}
           aria-label="View full image"
           onClick={() => {

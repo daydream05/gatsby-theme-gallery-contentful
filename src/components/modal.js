@@ -5,9 +5,12 @@ import { css } from 'theme-ui'
 import findIndex from "lodash/findIndex"
 import mousetrap from "mousetrap"
 
+import "@reach/dialog/styles.css"
+
 import theme from '../gatsby-plugin-theme-ui'
 
-import "@reach/dialog/styles.css"
+import RightArrow from './right-arrow'
+import LeftArrow from './left-arrow';
 
 const Modal = (props) => {
   const { isOpen, location, children } = props
@@ -85,8 +88,8 @@ const Modal = (props) => {
         display: `flex`,
         alignItems: `center`,
         zIndex: `modal`,
-        background: "hsla(0, 0%, 0%, .75)",
-        m: 0,
+        background: "hsla(0, 100%, 100%, .90)",
+        m: 0
       })}
     >
       <DialogContent
@@ -96,14 +99,19 @@ const Modal = (props) => {
           width: `auto`,
           p: 0,
           background: `unset`,
-          position: `relative`,
           mx: `auto`,
           my: 0,
           left: 0,
-          right: 0,
+          right: 0
         })}
       >
+        <LeftArrow
+          onClick={next}
+        />
         {children}
+        <RightArrow
+          onClick={next}
+        />
       </DialogContent>
     </DialogOverlay>
   );
