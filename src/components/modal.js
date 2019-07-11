@@ -82,13 +82,13 @@ const Modal = (props) => {
       onDismiss={() => {
         setShowDialog(false);
         // todo: make this use the page path given
-        navigate(`/gallery/`);
+        navigate(data.site.siteMetadata.basePath);
       }}
       css={css({
         display: `flex`,
         alignItems: `center`,
         zIndex: `modal`,
-        background: "hsla(0,4%,95%,.97)",
+        background: "hsla(0,4%,95%,.95)",
         m: 0
       })}
     >
@@ -96,9 +96,10 @@ const Modal = (props) => {
         css={css({
           display: `flex`,
           mt: [0],
-          width: `100%`,
           p: 0,
           background: `unset`,
+          width: `100%`,
+          maxWidth: theme.breakpoints.lg,
           mx: `auto`,
           my: 0,
           left: 0,
@@ -115,6 +116,11 @@ const Modal = (props) => {
 
 const photoQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        basePath
+      }
+    }
     contentfulGallery {
       media {
         ... on ContentfulPhoto {

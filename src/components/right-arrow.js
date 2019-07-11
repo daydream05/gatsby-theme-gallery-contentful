@@ -7,19 +7,18 @@ const RightArrow = props => {
     <div
       css={css({
         position: `absolute`,
-        height: `100%`,
-        top: 0,
-        right: 0,
+        top: `50%`,
+        right: 4,
         display: `flex`,
         alignItems: `center`,
-        px: 4
       })}
     >
       <FaLongArrowAltRight
         css={css({
           fontSize: 4,
           color: `black`,
-          cursor: `pointer`
+          cursor: `pointer`,
+          translteY: `-50%`,
         })}
         aria-label="Previous page"
         {...props}

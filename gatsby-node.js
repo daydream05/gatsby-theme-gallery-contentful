@@ -2,7 +2,7 @@ const slugify = require('slugify')
 
 exports.onCreateNode = (
   { node, actions },
-  { galleryPath = `/gallery/`}
+  { basePath = `/gallery/`}
 ) => {
   const { createNodeField } = actions
   
@@ -11,7 +11,7 @@ exports.onCreateNode = (
   // e.g. /gallery/this-image-title-938128129/
   if(node.internal.type === `ContentfulPhoto`) {
     const slug = `${slugify(node.title)}-${node.id}`
-    const url = `${galleryPath}${slug}/`
+    const url = `${basePath}${slug}/`;
 
     console.log(node);
 
@@ -32,7 +32,7 @@ exports.onCreateNode = (
 
   if (node.internal.type === `ContentfulVideo`) {
     const slug = slugify(node.title);
-    const url = `${galleryPath}${slug}-${node.id}/`;
+    const url = `${basePath}${slug}-${node.id}/`;
 
     createNodeField({
       node,
@@ -48,11 +48,8 @@ exports.onCreateNode = (
   } 
 }
 
-exports.createPages = (
-  { graphql, actions },
-  { galleryPath = `/gallery/`}
-) => {
-  const { createPage } = actions
+exports.createPages = ({ graphql, actions }, { basePath = `/gallery/` }) => {
+  const { createPage } = actions;
 
   // create a page for each media item
 
@@ -78,9 +75,7 @@ exports.createPages = (
         if (media.__typename === `ContentfulPhoto`) {
           createPage({
             path: media.fields.path,
-            component: require.resolve(
-              `./src/templates/photo-template.js`
-            ),
+            component: require.resolve(`./src/templates/photo-template.js`),
             context: {
               slug: media.fields.slug
             }
@@ -89,13 +84,13 @@ exports.createPages = (
       });
       resolve();
     });
-  })
+  });
 
   // create a root page for gallery
   createPage({
-    path: `${galleryPath}`,
+    path: `${basePath}`,
     component: require.resolve(`./src/templates/gallery-template.js`)
   });
 
-  return Promise.all([loadGallery])
-}
+  return Promise.all([loadGallery]);
+};

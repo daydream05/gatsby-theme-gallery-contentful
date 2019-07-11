@@ -30,7 +30,6 @@ const PhotoPage = ({ data, location }) => {
         <div
           css={css({
             width: `100%`,
-            maxWidth: theme.breakpoints.lg,
             backgroundColor: `white`,
             margin: `auto`,
             py: 4,
