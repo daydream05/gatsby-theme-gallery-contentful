@@ -1,7 +1,7 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { Styled, css } from 'theme-ui'
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 
 import Layout from './layout'
 import theme from '../gatsby-plugin-theme-ui';
@@ -31,7 +31,17 @@ const PhotoPage = ({ data, location }) => {
           css={css({
             display: `inline-block`,
             position: `relative`,
+            cursor: `pointer`,
           })}
+          aria-label="View full image"
+          onClick={() => {
+            navigate(
+              location.pathname,
+              {
+                state: { removeModal: true }
+              }
+            )
+          }}
         >
           <Img
             fixed={media.fixed}
@@ -41,27 +51,6 @@ const PhotoPage = ({ data, location }) => {
             })}
           />
         </div>
-        <Link
-            css={css({
-              position: `absolute`,
-              bottom: -4,
-              left: 0,
-              right: 0,
-              display: `inline-block`,
-              color: `accent`,
-              backgroundColor: `white`,
-              px: 4,
-              py: 2,
-              margin: `auto`,
-              textAlign: `center`,
-            })}
-            to={location.pathname}
-            state={{
-              removeModal: true,
-            }}
-          >
-              See more
-          </Link>
       </Layout>
     )
   }
