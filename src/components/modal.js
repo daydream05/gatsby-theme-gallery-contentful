@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { navigate, useStaticQuery, graphql } from 'gatsby'
-import { DialogOverlay, DialogContent } from "@reach/dialog"
-import { css } from 'theme-ui'
 import findIndex from "lodash/findIndex"
 import mousetrap from "mousetrap"
 
 import "@reach/dialog/styles.css"
 
-import theme from '../gatsby-plugin-theme-ui'
-
 import RightArrow from './right-arrow'
 import LeftArrow from './left-arrow';
-import CloseButton from './close-button';
+import CloseButton from './close-button'
+import DialogOverlay from './dialog-overlay'
+import DialogContent from './dialog-content'
 
 const Modal = (props) => {
   const { isOpen, location, children } = props
@@ -88,28 +86,8 @@ const Modal = (props) => {
     <DialogOverlay
       isOpen={showDialog}
       onDismiss={dismiss}
-      css={css({
-        display: `flex`,
-        alignItems: `center`,
-        zIndex: `modal`,
-        background: "hsla(0,4%,95%,.95)",
-        m: 0
-      })}
     >
-      <DialogContent
-        css={css({
-          display: `flex`,
-          mt: [0],
-          p: 0,
-          background: `unset`,
-          width: `100%`,
-          maxWidth: theme.breakpoints.lg,
-          mx: `auto`,
-          my: 0,
-          left: 0,
-          right: 0
-        })}
-      >
+      <DialogContent>
         <CloseButton onClick={dismiss} />
         <LeftArrow onClick={next} />
         {children}
