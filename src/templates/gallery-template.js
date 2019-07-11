@@ -13,7 +13,7 @@ export const galleryQuery = graphql`
           id
           title
           media {
-            fluid {
+            fluid(maxHeight: 900) {
               ...GatsbyContentfulFluid_withWebp
             }
             fixed {

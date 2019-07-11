@@ -24,20 +24,14 @@ const PhotoPage = ({ data, location }) => {
     <Layout location={location} isModal={isModal}>
       <div
         css={css({
-          display: `flex`,
-          alignItems: `center`,
-          justifyContent: `center`,
-          height: `100vh`,
-          width: `100%`,
-          overflowY: `hidden`,
-          marginTop: isModal ? 0 : `-${theme.headerHeight}`,
+          display: `inline-block`,
         })}
       >
         <Img
           fixed={media.fixed}
           alt={media.title}
           css={css({
-            width: `100%`,
+            width: `100%`
           })}
         />
       </div>

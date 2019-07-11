@@ -82,24 +82,25 @@ const Modal = (props) => {
         navigate(`/gallery/`);
       }}
       css={css({
+        display: `flex`,
+        alignItems: `center`,
         zIndex: `modal`,
         background: "hsla(0, 0%, 0%, .75)",
-        m: 0
+        m: 0,
       })}
     >
       <DialogContent
         css={css({
+          display: `inline-block`,
           mt: [0],
-          width: `50vw`,
-          height: `100vh`,
-          maxWidth: `50vw`,
+          width: `auto`,
           p: 0,
           background: `unset`,
-          position: `absolute`,
+          position: `relative`,
           mx: `auto`,
+          my: 0,
           left: 0,
           right: 0,
-          top: 0,
         })}
       >
         {children}
