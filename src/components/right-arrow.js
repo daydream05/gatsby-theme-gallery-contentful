@@ -8,7 +8,7 @@ const RightArrow = props => {
       css={css({
         position: `absolute`,
         top: `50%`,
-        right: 4,
+        right: 5,
         display: `flex`,
         alignItems: `center`,
       })}

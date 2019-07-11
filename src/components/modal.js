@@ -11,6 +11,7 @@ import theme from '../gatsby-plugin-theme-ui'
 
 import RightArrow from './right-arrow'
 import LeftArrow from './left-arrow';
+import CloseButton from './close-button';
 
 const Modal = (props) => {
   const { isOpen, location, children } = props
@@ -76,14 +77,15 @@ const Modal = (props) => {
     }
   }
 
+  const dismiss = () => {
+    setShowDialog(false);
+    navigate(data.site.siteMetadata.basePath);
+  }
+
   return (
     <DialogOverlay
       isOpen={showDialog}
-      onDismiss={() => {
-        setShowDialog(false);
-        // todo: make this use the page path given
-        navigate(data.site.siteMetadata.basePath);
-      }}
+      onDismiss={dismiss}
       css={css({
         display: `flex`,
         alignItems: `center`,
@@ -106,6 +108,7 @@ const Modal = (props) => {
           right: 0
         })}
       >
+        <CloseButton onClick={dismiss} />
         <LeftArrow onClick={next} />
         {children}
         <RightArrow onClick={next} />
