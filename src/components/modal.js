@@ -78,6 +78,7 @@ const Modal = (props) => {
       isOpen={showDialog}
       onDismiss={() => {
         setShowDialog(false);
+        // todo: make this use the page path given
         navigate(`/gallery/`);
       }}
       css={css({
