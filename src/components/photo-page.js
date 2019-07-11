@@ -18,20 +18,53 @@ const PhotoPage = ({ data, location }) => {
     isModal = true
   }
 
-  console.log(isModal)
+  if(isModal) {
+    return (
+      <Layout location={location} isModal={isModal}>
+        <div
+          css={css({
+            display: `inline-block`,
+          })}
+        >
+          <Img
+            fixed={media.fixed}
+            alt={media.title}
+            css={css({
+              width: `100%`
+            })}
+          />
+        </div>
+      </Layout>
+    )
+  }
 
   return (
     <Layout location={location} isModal={isModal}>
       <div
         css={css({
-          display: `inline-block`,
+          display: `flex`,
+          flexDirection: `column`,
+          px: [4],
+          py: [4],
+          [theme.mediaQueries.xl]: {
+            maxWidth: theme.breakpoints.lg,
+            margin: `auto`,
+          }
         })}
       >
+        <Styled.h1
+          css={css({
+            gridColumn: 2,
+            fontSize: [3, 4, 5],
+          })}
+        >{title}</Styled.h1>
         <Img
-          fixed={media.fixed}
+          fluid={media.fluid}
           alt={media.title}
           css={css({
-            width: `100%`
+            width: `100%`,
+            gridColumn: 1,
+            gridRow: 1,
           })}
         />
       </div>
