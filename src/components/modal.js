@@ -88,15 +88,15 @@ const Modal = (props) => {
         display: `flex`,
         alignItems: `center`,
         zIndex: `modal`,
-        background: "hsla(0, 100%, 100%, .90)",
+        background: "hsla(0,4%,95%,.97)",
         m: 0
       })}
     >
       <DialogContent
         css={css({
-          display: `inline-block`,
+          display: `flex`,
           mt: [0],
-          width: `auto`,
+          width: `100%`,
           p: 0,
           background: `unset`,
           mx: `auto`,
@@ -105,13 +105,9 @@ const Modal = (props) => {
           right: 0
         })}
       >
-        <LeftArrow
-          onClick={next}
-        />
+        <LeftArrow onClick={next} />
         {children}
-        <RightArrow
-          onClick={next}
-        />
+        <RightArrow onClick={next} />
       </DialogContent>
     </DialogOverlay>
   );

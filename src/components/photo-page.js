@@ -29,30 +29,57 @@ const PhotoPage = ({ data, location }) => {
       <Layout location={location} isModal={isModal}>
         <div
           css={css({
-            display: `inline-block`,
-            position: `relative`,
-            cursor: `zoom-in`,
+            width: `100%`,
+            maxWidth: theme.breakpoints.lg,
+            backgroundColor: `white`,
+            margin: `auto`,
+            py: 4,
+            px: 4
           })}
-          aria-label="View full image"
-          onClick={() => {
-            navigate(
-              location.pathname,
-              {
-                state: { removeModal: true }
-              }
-            )
-          }}
         >
-          <Img
-            fixed={media.fixed}
-            alt={media.title}
+          <span
             css={css({
-              width: `100%`
+              display: `block`,
+              textTransform: `uppercase`,
+              letterSpacing: 2,
+              fontFamily: `body`,
+              fontWeight: `bold`,
+              color: `black`,
+              opacity: 0.8,
+              fontSize: `0.5rem`,
+              mb: 4,
             })}
-          />
+          >Animation</span>
+          <Styled.h1
+            css={css({
+              fontSize: 3,
+              mb: 4,
+              ":first-letter": {
+                textTransform: `capitalize`,
+              }
+            })}
+          >
+            {title}
+          </Styled.h1>
+          <div
+            css={css({
+              display: `flex`,
+              flexDirection: `column`,
+              alignItems: `center`,
+              backgroundColor: `grey.light`
+            })}
+          >
+            <Img
+              fixed={media.fixed}
+              alt={media.title}
+              css={css({
+                width: `100%`
+              })}
+            />
+          </div>
         </div>
       </Layout>
-    )
+    );
   }
 
   return (
