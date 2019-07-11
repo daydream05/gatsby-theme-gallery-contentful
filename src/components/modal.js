@@ -90,7 +90,7 @@ const Modal = (props) => {
         css={css({
           mt: [0],
           width: `50vw`,
-          height: `80vh`,
+          height: `100vh`,
           maxWidth: `50vw`,
           p: 0,
           background: `unset`,
@@ -98,7 +98,7 @@ const Modal = (props) => {
           mx: `auto`,
           left: 0,
           right: 0,
-          top: [4],
+          top: 0,
         })}
       >
         {children}

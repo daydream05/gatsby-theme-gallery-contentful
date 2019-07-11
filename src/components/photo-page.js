@@ -26,13 +26,15 @@ const PhotoPage = ({ data, location }) => {
         css={css({
           display: `flex`,
           alignItems: `center`,
-          height: `calc(100vh - ${theme.headerHeight})`,
+          justifyContent: `center`,
+          height: `100vh`,
           width: `100%`,
           overflowY: `hidden`,
+          marginTop: isModal ? 0 : `-${theme.headerHeight}`,
         })}
       >
         <Img
-          fluid={media.fluid}
+          fixed={media.fixed}
           alt={media.title}
           css={css({
             width: `100%`,
