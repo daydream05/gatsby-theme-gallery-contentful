@@ -82,7 +82,7 @@ const Modal = (props) => {
       }}
       css={css({
         zIndex: `modal`,
-        background: "hsla(0, 0, 0, 0.8)",
+        background: "hsla(0, 0%, 0%, .75)",
         m: 0
       })}
     >
