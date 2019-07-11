@@ -24,13 +24,15 @@ const Modal = (props) => {
     mousetrap.bind(`left`, next)
     mousetrap.bind(`right`, previous)
     mousetrap.bind(`space`, next)
+    mousetrap.bind(`escape`, dismiss)
 
     return () => {
       mousetrap.unbind(`left`)
       mousetrap.unbind(`right`)
       mousetrap.unbind(`space`)
+      mousetrap.unbind(`escape`)
     }
-  }, [`left`, `right`, `space`])
+  }, [`left`, `right`, `space`, `escape`])
 
   const findCurrentIndex = () => {
     let index
