@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { css } from 'theme-ui'
 
+import theme from 'gatsby-plugin-theme-ui'
+
 import PortfolioCardMedia from './portfolio-card-media'
 import PortfolioCardTitle from './portfolio-card-title'
 import PortfolioCardDescription from './portfolio-card-description'
@@ -32,9 +34,7 @@ const PortfolioCard = (props) => {
           overflow: `hidden`
         })}
       >
-        {media &&
-          <PortfolioCardMedia media={media} />
-        }
+        {media && <PortfolioCardMedia media={media} />}
         <div
           className="card"
           css={css({
@@ -44,8 +44,8 @@ const PortfolioCard = (props) => {
             transition: `0.3s`,
             visibility: `hidden`,
             opacity: 0,
-            px: [3, 3, 4],
-            py: [4],
+            px: [3, 4, 4],
+            py: [3, 4, 4],
             height: `100%`,
             position: `absolute`,
             top: 0,
@@ -53,41 +53,67 @@ const PortfolioCard = (props) => {
             width: `100%`
           })}
         >
-          {category && (
-            <PortfolioCardCategory>{category}</PortfolioCardCategory>
-          )}
-          <PortfolioCardTitle>{title}</PortfolioCardTitle>
-          {title && (
-            <PortfolioCardDescription>
-              {description}
-            </PortfolioCardDescription>
-          )}
-          <button
-            tabindex="-1"
+          <div
             css={css({
-              border: `2px solid white`,
-              backgroundColor: `unset`,
-              color: `white`,
-              cursor: `pointer`,
-              fontSize: [1],
-              textTransform: `uppercase`,
-              py: 3,
-              px: 3,
-              letterSpacing: 2,
-              display: `flex`,
-              justifyContent: `space-between`,
-              alignItems: `center`,
-              alignSelf: `flex-start`,
-              transition: `0.3s`,
-              ":hover, :focus": {
-                backgroundColor: `white`,
-                transition: `0.3s`,
-                color: `black`
-              }
+              flex: 1,
+              overflow: `hidden`,
             })}
           >
-            {buttonText}
-          </button>
+            {category && (
+              <PortfolioCardCategory>{category}</PortfolioCardCategory>
+            )}
+            <PortfolioCardTitle>{title}</PortfolioCardTitle>
+            {title && (
+              <PortfolioCardDescription>
+                {description}
+              </PortfolioCardDescription>
+            )}
+          </div>
+          <div
+            css={css`
+              position: relative;
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                transform: translateY(-100%);
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                  180deg,
+                  rgba(29, 29, 29, 0) 3%,
+                  rgb(29, 29, 29) 100%
+                );
+              }
+            `}
+          >
+            <button
+              tabindex="-1"
+              css={css({
+                border: `2px solid white`,
+                backgroundColor: `unset`,
+                color: `white`,
+                cursor: `pointer`,
+                fontSize: [1],
+                textTransform: `uppercase`,
+                py: 3,
+                px: 3,
+                letterSpacing: 2,
+                display: `flex`,
+                justifyContent: `space-between`,
+                alignItems: `center`,
+                alignSelf: `flex-start`,
+                transition: `0.3s`,
+                ":hover, :focus": {
+                  backgroundColor: `white`,
+                  transition: `0.3s`,
+                  color: `black`
+                }
+              })}
+            >
+              {buttonText}
+            </button>
+          </div>
         </div>
       </section>
     </Link>

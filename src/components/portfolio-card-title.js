@@ -14,7 +14,7 @@ const PortfolioCardTitle = (props) => {
         fontWeight: `bold`,
         color: `white`,
         fontSize: [2],
-        mb: 4
+        mb: 0,
       })}
       {...props}
     >

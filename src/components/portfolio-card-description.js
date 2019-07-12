@@ -2,24 +2,30 @@ import React from "react";
 import PropTypes from "prop-types";
 import { css, Styled } from "theme-ui";
 
-
 const PortfolioCardDescription = (props) => {
   return (
-    <Styled.p
+    <div
       css={css({
-        color: `white`,
-        fontFamily: `body`,
-        lineHeight: 1.8,
-        fontSize: [2],
-        letterSpacing: 1,
-        flex: 1,
         overflow: `hidden`,
-        textOverflow: `ellipsis`
+        flex: 1,
       })}
       {...props}
     >
-      {props.children}
-    </Styled.p>
+      <Styled.p
+        css={css({
+          color: `white`,
+          fontFamily: `body`,
+          lineHeight: 1.8,
+          fontSize: [2],
+          letterSpacing: 1,
+          textOverflow: `ellipsis`,
+          mt: 4,
+          mb: 0,
+        })}
+      >
+        {props.children}
+      </Styled.p>
+    </div>
   );
 }
 
