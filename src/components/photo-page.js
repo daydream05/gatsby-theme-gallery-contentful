@@ -1,18 +1,11 @@
 import React from 'react'
-import Img from 'gatsby-image'
-import { css } from 'theme-ui'
-
-import theme from '../gatsby-plugin-theme-ui'
+import PropTypes from 'prop-types'
 
 import Layout from './layout'
-import PhotoPageTitle from './photo-page-title'
-import PhotoPageCategory from "./photo-page-category";
-import PhotoPageContainer from './photo-page-container';
+import PhotoPageContent from './photo-page-content'
 
 
 const PhotoPage = ({ data, location }) => {
-  const { title, media } = data.contentfulPhoto
-
   let isModal = false
   // we can pass in a removeModal state to a Link
   // as an escape hatch.
@@ -30,29 +23,16 @@ const PhotoPage = ({ data, location }) => {
 
   return (
     <Layout location={location} isModal={isModal}>
-      <PhotoPageContainer
-      >
-        <PhotoPageCategory>Animation</PhotoPageCategory>
-        <PhotoPageTitle>{title}</PhotoPageTitle>
-        <div
-          css={css({
-            display: `flex`,
-            flexDirection: `column`,
-            alignItems: `center`,
-            backgroundColor: `grey.light`
-          })}
-        >
-          <Img
-            fluid={media.fluid}
-            alt={media.title}
-            css={css({
-              width: `100%`
-            })}
-          />
-        </div>
-      </PhotoPageContainer>
+      <PhotoPageContent
+        data={data}
+      />
     </Layout>
   );
+}
+
+PhotoPage.propTypes = {
+  data: PropTypes.object,
+  location: PropTypes.object.isRequired,
 }
 
 export default PhotoPage

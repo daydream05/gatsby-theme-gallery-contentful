@@ -9,15 +9,12 @@ const CustomDialogContent = (props) => {
   return (
     <DialogContent
       css={css({
-        display: `flex`,
         mt: 5,
         p: 0,
         background: `unset`,
         width: `100%`,
         maxWidth: theme.breakpoints.lg,
         mx: `auto`,
-        left: 0,
-        right: 0
       })}
       {...props}
     >
