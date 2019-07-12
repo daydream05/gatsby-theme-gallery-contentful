@@ -11,14 +11,15 @@ const masonryOptions = {
 const Masonry = (props) => {
   return (
     <ReactMasonry
-      className={'grid'}
+      className={"grid"}
       options={masonryOptions}
       {...props}
       css={css({
         mx: `auto`,
-        '.grid-item': {
+        my: 0,
+        ".grid-item": {
           marginBottom: [3],
-        }
+        },
       })}
     >
       {props.children}

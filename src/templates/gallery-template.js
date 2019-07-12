@@ -16,7 +16,7 @@ export const galleryQuery = graphql`
             fluid(maxWidth: 3000) {
               ...GatsbyContentfulFluid_withWebp
             }
-            fixed {
+            fixed(width: 300) {
               ...GatsbyContentfulFixed_tracedSVG
             }
           }

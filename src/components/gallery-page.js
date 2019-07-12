@@ -11,7 +11,7 @@ const GalleryPage = ({ data }) => {
     <Layout>
       <div
         css={css({
-          pt: [4]
+          pt: [4],
         })}
       >
         <Styled.h1
