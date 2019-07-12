@@ -3,7 +3,7 @@ import { css } from 'theme-ui'
 
 import theme from '../gatsby-plugin-theme-ui'
 
-const PhotoPageContainer = (props) => {
+const PortfolioPageContainer = (props) => {
   return (
     <div
       css={css({
@@ -22,4 +22,4 @@ const PhotoPageContainer = (props) => {
   );
 }
 
-export default PhotoPageContainer
+export default PortfolioPageContainer

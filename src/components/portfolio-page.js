@@ -5,7 +5,7 @@ import Layout from './layout'
 import PhotoPageContent from './photo-page-content'
 
 
-const PhotoPage = ({ data, location }) => {
+const PortfolioPage = ({ data, location }) => {
   let isModal = false
   // we can pass in a removeModal state to a Link
   // as an escape hatch.
@@ -30,9 +30,9 @@ const PhotoPage = ({ data, location }) => {
   );
 }
 
-PhotoPage.propTypes = {
+PortfolioPage.propTypes = {
   data: PropTypes.object,
-  location: PropTypes.object.isRequired,
-}
+  location: PropTypes.object.isRequired
+};
 
-export default PhotoPage
+export default PortfolioPage

@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby'
-import PhotoPage from '../components/photo-page'
+import PortfolioPage from '../components/portfolio-page'
 
-export default PhotoPage
+export default PortfolioPage
 
-export const photoTemplateQuery = graphql`
+export const portfolioTemplateQuery = graphql`
   query($slug: String!) {
     contentfulPhoto(fields: { slug: { eq: $slug }}) {
       title

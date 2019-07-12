@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'theme-ui'
 
-const PhotoPageCategory = (props) => {
+const PortfolioPageCategory = (props) => {
   return (
     <span
       css={css({
@@ -17,7 +17,7 @@ const PhotoPageCategory = (props) => {
       })}
       {...props}
     >{props.children}</span>
-  );
+  )
 }
 
-export default PhotoPageCategory;
+export default PortfolioPageCategory

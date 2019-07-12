@@ -1,7 +1,7 @@
 import React from 'react'
 import { Styled, css } from 'theme-ui'
 
-const PhotoPageTitle = (props) => {
+const PortfolioPageTitle = (props) => {
   return (
     <Styled.h1
       css={css({
@@ -18,4 +18,4 @@ const PhotoPageTitle = (props) => {
   )
 }
 
-export default PhotoPageTitle
+export default PortfolioPageTitle

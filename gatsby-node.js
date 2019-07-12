@@ -75,7 +75,7 @@ exports.createPages = ({ graphql, actions }, { basePath = `/gallery/` }) => {
         if (media.__typename === `ContentfulPhoto`) {
           createPage({
             path: media.fields.path,
-            component: require.resolve(`./src/templates/photo-template.js`),
+            component: require.resolve(`./src/templates/portfolio-template.js`),
             context: {
               slug: media.fields.slug
             }
