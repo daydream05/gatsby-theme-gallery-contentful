@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { navigate, useStaticQuery, graphql } from 'gatsby'
 import findIndex from "lodash/findIndex"
 import mousetrap from "mousetrap"
@@ -95,6 +96,12 @@ const Modal = (props) => {
       </DialogContent>
     </DialogOverlay>
   );
+}
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool,
+  location: PropTypes.object.isRequired,
+  children: PropTypes.node,
 }
 
 const photoQuery = graphql`
