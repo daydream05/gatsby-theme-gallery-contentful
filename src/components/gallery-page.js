@@ -17,7 +17,8 @@ const GalleryPage = ({ data, location }) => {
         <Styled.h1
           css={css({
             color: `accent`,
-            textAlign: `center`
+            textAlign: `center`,
+            mb: [4],
           })}
         >
           Gallery

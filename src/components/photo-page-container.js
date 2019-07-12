@@ -13,7 +13,7 @@ const PhotoPageContainer = (props) => {
         margin: `auto`,
         maxWidth: theme.breakpoints.xl,
         py: 4,
-        px: 4
+        px: [3,3,4]
       })}
       {...props}
     >
