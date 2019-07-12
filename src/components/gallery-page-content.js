@@ -25,13 +25,13 @@ const GalleryPageContent = ({ data }) => {
             return (
               <PortfolioCard
                 key={node.id}
+                className="grid-item"
                 title={node.title}
                 image={node.media}
                 category={node.category}
                 linkto={node.fields.path}
                 description="We are 10 sparkling minds exploring human
                     communication via digital assets..."
-                className="grid-item"
               />
             );
           })}
