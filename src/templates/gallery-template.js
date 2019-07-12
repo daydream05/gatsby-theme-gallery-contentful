@@ -14,10 +14,7 @@ export const galleryQuery = graphql`
           title
           media {
             fluid(maxWidth: 3000) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-            fixed(width: 300) {
-              ...GatsbyContentfulFixed_tracedSVG
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           fields {

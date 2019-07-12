@@ -25,10 +25,20 @@ const GalleryPage = ({ data }) => {
         <Masonry>
           {data.allContentfulPhoto.edges.map(({ node }) => {
             return (
-              <Link key={node.id} className="grid-item" to={node.fields.path}>
-                <Img fixed={node.media.fixed} alt={node.title} />
+              <Link
+                key={node.id}
+                className="grid-item"
+                to={node.fields.path}
+              >
+                <Img
+                  fluid={node.media.fluid}
+                  alt={node.title}
+                  css={css({
+                    width: `100%`
+                  })}
+                />
               </Link>
-            )
+            );
           })}
         </Masonry>
       </div>
