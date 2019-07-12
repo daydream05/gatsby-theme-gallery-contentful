@@ -56,7 +56,7 @@ const GalleryPage = ({ data, location }) => {
                   <div
                     className="card"
                     css={css({
-                      transition: `0.3s opacity`,
+                      transition: `0.3s`,
                       visibility: `hidden`,
                       opacity: 0,
                       px: [3, 3, 4],
@@ -64,7 +64,7 @@ const GalleryPage = ({ data, location }) => {
                       height: `100%`,
                       position: `absolute`,
                       top: 0,
-                      backgroundColor: `rgba(255, 255, 255, 0.85)`
+                      backgroundColor: `black`,
                     })}
                   >
                     {node.category && (
@@ -74,7 +74,7 @@ const GalleryPage = ({ data, location }) => {
                           textTransform: `uppercase`,
                           letterSpacing: 1,
                           fontFamily: `body`,
-                          color: `black`,
+                          color: `white`,
                           opacity: 0.8,
                           fontSize: [0],
                           mb: [2, 2, 3]
@@ -90,8 +90,7 @@ const GalleryPage = ({ data, location }) => {
                         letterSpacing: 1,
                         fontFamily: `heading`,
                         fontWeight: `bold`,
-                        color: `black`,
-                        opacity: 0.8,
+                        color: `white`,
                         fontSize: [2],
                         mb: 4,
                       })}
@@ -100,10 +99,11 @@ const GalleryPage = ({ data, location }) => {
                     </Styled.h5>
                     <Styled.p
                       css={css({
-                        color: `black`,
+                        color: `white`,
                         fontFamily: `body`,
                         lineHeight: 1.8,
-                        fontSize: [1]
+                        fontSize: [2],
+                        letterSpacing: 1,
                       })}
                     >
                       We are 10 sparkling minds exploring human
