@@ -57,6 +57,8 @@ const GalleryPage = ({ data, location }) => {
                   <div
                     className="card"
                     css={css({
+                      display: `flex`,
+                      flexDirection: `column`,
                       boxSizing: `border-box`,
                       transition: `0.3s`,
                       visibility: `hidden`,
@@ -68,7 +70,7 @@ const GalleryPage = ({ data, location }) => {
                       top: 0,
                       backgroundColor: `black`,
                       width: `100%`,
-                      height: `100%`,
+                      height: `100%`
                     })}
                   >
                     {node.category && (
@@ -96,7 +98,7 @@ const GalleryPage = ({ data, location }) => {
                         fontWeight: `bold`,
                         color: `white`,
                         fontSize: [2],
-                        mb: 4,
+                        mb: 4
                       })}
                     >
                       {node.title}
@@ -108,11 +110,39 @@ const GalleryPage = ({ data, location }) => {
                         lineHeight: 1.8,
                         fontSize: [2],
                         letterSpacing: 1,
+                        flex: 1,
+                        overflow: `hidden`,
+                        textOverflow: `ellipsis`
                       })}
                     >
                       We are 10 sparkling minds exploring human
                       communication via digital assets...
                     </Styled.p>
+                    <button
+                      css={css({
+                        border: `2px solid white`,
+                        backgroundColor: `unset`,
+                        color: `white`,
+                        cursor: `pointer`,
+                        fontSize: [1],
+                        textTransform: `uppercase`,
+                        py: 3,
+                        px: 3,
+                        letterSpacing: 2,
+                        display: `flex`,
+                        justifyContent: `space-between`,
+                        alignItems: `center`,
+                        alignSelf: `flex-start`,
+                        transition: `0.3s`,
+                        ":hover, :focus": {
+                          backgroundColor: `white`,
+                          transition: `0.3s`,
+                          color: `black`
+                        }
+                      })}
+                    >
+                      Learn more
+                    </button>
                   </div>
                 </div>
               </Link>
