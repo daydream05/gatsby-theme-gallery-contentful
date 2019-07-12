@@ -1,6 +1,5 @@
 import React from 'react'
 import Img from 'gatsby-image'
-import { Link } from 'gatsby'
 import { css, Styled } from 'theme-ui'
 
 import Masonry from './masonry'
@@ -32,7 +31,7 @@ const GalleryPage = ({ data, location }) => {
                 title={node.title}
                 image={node.media}
                 category={node.category}
-                linkTo={node.fields.path}
+                linkto={node.fields.path}
                 description="We are 10 sparkling minds exploring human
                     communication via digital assets..."
                 className="grid-item"

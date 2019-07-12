@@ -9,10 +9,10 @@ import PortfolioCardDescription from './portfolio-card-description'
 import PortfolioCardCategory from './portfolio-card-category'
 
 const PortfolioCard = (props) => {
-  const { title, image, category, description, buttonText, linkTo } = props
+  const { title, image, category, description, buttontext, linkto } = props
   return (
     <Link
-      to={linkTo}
+      to={linkto}
       css={css({
         textDecoration: `none`,
         ":hover, :focus, :active": {
@@ -88,7 +88,7 @@ const PortfolioCard = (props) => {
               }
             })}
           >
-            {buttonText}
+            {buttontext}
           </button>
         </div>
       </section>
@@ -103,12 +103,12 @@ PortfolioCard.propTypes = {
   }),
   category: PropTypes.string,
   description: PropTypes.string,
-  buttonText: PropTypes.string,
-  linkTo: PropTypes.isRequired,
+  buttontext: PropTypes.string,
+  linkto: PropTypes.string.isRequired
 };
 
 PortfolioCard.defaultProps = {
-  buttonText: `Learn more`,
+  buttontext: `Learn more`,
 }
 
 export default PortfolioCard
