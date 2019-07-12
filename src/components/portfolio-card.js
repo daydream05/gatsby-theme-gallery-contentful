@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
 import { css } from 'theme-ui'
 
+import PortfolioCardMedia from './portfolio-card-media'
 import PortfolioCardTitle from './portfolio-card-title'
 import PortfolioCardDescription from './portfolio-card-description'
 import PortfolioCardCategory from './portfolio-card-category'
 
 const PortfolioCard = (props) => {
-  const { title, image, category, description, buttonText, linkTo, ...rest } = props
+  const { title, media, category, description, buttonText, linkTo, ...rest } = props
   return (
     <Link
       to={linkTo}
@@ -32,14 +32,8 @@ const PortfolioCard = (props) => {
           overflow: `hidden`
         })}
       >
-        {image &&
-          <Img
-            fluid={image.fluid}
-            alt={title}
-            css={css({
-              width: `100%`
-            })}
-          />
+        {media &&
+          <PortfolioCardMedia media={media} />
         }
         <div
           className="card"

@@ -27,7 +27,7 @@ const GalleryPageContent = ({ data }) => {
                 key={node.id}
                 className="grid-item"
                 title={node.title}
-                image={node.media}
+                media={node.media}
                 category={node.category}
                 linkTo={node.fields.path}
                 description="We are 10 sparkling minds exploring human
