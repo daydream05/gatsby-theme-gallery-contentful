@@ -13,6 +13,7 @@ const PortfolioCard = (props) => {
   return (
     <Link
       to={linkto}
+      title={`Read more about the "${title}" project`}
       css={css({
         textDecoration: `none`,
         ":hover, :focus, :active": {
@@ -104,7 +105,7 @@ PortfolioCard.propTypes = {
   category: PropTypes.string,
   description: PropTypes.string,
   buttontext: PropTypes.string,
-  linkto: PropTypes.string.isRequired
+  linkto: PropTypes.string.isRequired,
 };
 
 PortfolioCard.defaultProps = {
