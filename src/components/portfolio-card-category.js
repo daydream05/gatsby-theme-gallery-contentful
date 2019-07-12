@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { css, Styled } from "theme-ui";
+import { css } from "theme-ui";
 
 
 const PortfolioCardCategory = (props) => {
