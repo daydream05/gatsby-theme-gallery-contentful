@@ -12,6 +12,7 @@ export const galleryQuery = graphql`
         node {
           id
           title
+          category
           media {
             fluid(maxWidth: 3000) {
               ...GatsbyContentfulFluid_tracedSVG
