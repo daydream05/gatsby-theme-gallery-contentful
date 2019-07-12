@@ -56,6 +56,7 @@ const GalleryPage = ({ data, location }) => {
                   <div
                     className="card"
                     css={css({
+                      boxSizing: `border-box`,
                       transition: `0.3s`,
                       visibility: `hidden`,
                       opacity: 0,
@@ -65,6 +66,8 @@ const GalleryPage = ({ data, location }) => {
                       position: `absolute`,
                       top: 0,
                       backgroundColor: `black`,
+                      width: `100%`,
+                      height: `100%`,
                     })}
                   >
                     {node.category && (

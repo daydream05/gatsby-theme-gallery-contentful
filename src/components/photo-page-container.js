@@ -7,6 +7,7 @@ const PhotoPageContainer = (props) => {
   return (
     <div
       css={css({
+        boxSizing: `border-box`,
         width: `100%`,
         backgroundColor: `white`,
         margin: `auto`,
