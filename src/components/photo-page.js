@@ -34,7 +34,7 @@ const PhotoPage = ({ data, location }) => {
           width: `100%`,
           backgroundColor: `white`,
           margin: `auto`,
-          maxWidth: theme.breakpoints.lg,
+          maxWidth: theme.breakpoints.xl,
           py: 4,
           px: 4
         })}

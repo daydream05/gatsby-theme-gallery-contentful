@@ -5,7 +5,7 @@ const PhotoPageTitle = (props) => {
   return (
     <Styled.h1
       css={css({
-        fontSize: 3,
+        fontSize: 4,
         mb: 4,
         ":first-letter": {
           textTransform: `capitalize`
