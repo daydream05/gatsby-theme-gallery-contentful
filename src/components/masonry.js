@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ReactMasonry from 'react-masonry-component'
 import { css } from 'theme-ui'
 
@@ -13,9 +14,7 @@ const masonryOptions = {
 const Masonry = (props) => {
   return (
     <ReactMasonry
-      className={"grid"}
       options={masonryOptions}
-      {...props}
       css={css({
         mx: `auto`,
         my: 0,
@@ -26,14 +25,19 @@ const Masonry = (props) => {
             `calc(100vw - ${theme.space[4]}px)`,
             `30vw`,
             `30vw`,
-            `20vw`,
+            `20vw`
           ]
         }
       })}
+      {...props}
     >
       {props.children}
     </ReactMasonry>
   );
+}
+
+Masonry.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Masonry
