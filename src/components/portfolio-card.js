@@ -69,6 +69,7 @@ const PortfolioCard = (props) => {
             </PortfolioCardDescription>
           )}
           <button
+            tabindex="-1"
             css={css({
               border: `2px solid white`,
               backgroundColor: `unset`,
