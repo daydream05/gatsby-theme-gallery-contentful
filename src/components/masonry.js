@@ -23,7 +23,7 @@ const Masonry = (props) => {
           width: [
             `calc(100vw - ${theme.space[4]}px)`,
             `calc(100vw - ${theme.space[4]}px)`,
-            `30vw`,
+            `45vw`,
             `30vw`,
             `20vw`
           ]

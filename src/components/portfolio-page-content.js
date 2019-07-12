@@ -7,6 +7,8 @@ import PortfolioPageTitle from './portfolio-page-title'
 import PortfolioPageCategory from "./portfolio-page-category";
 import PortfolioPageContainer from './portfolio-page-container';
 
+import PortfolioCardMedia from './portfolio-card-media'
+
 
 const PhotoPageContent = ({ data, className }) => {
   const { title, media } = data.contentfulPortfolio
@@ -14,24 +16,7 @@ const PhotoPageContent = ({ data, className }) => {
     <PortfolioPageContainer className={className}>
       <PortfolioPageCategory>Animation</PortfolioPageCategory>
       <PortfolioPageTitle>{title}</PortfolioPageTitle>
-      <div
-        css={css({
-          display: `flex`,
-          flexDirection: `column`,
-          alignItems: `center`,
-          backgroundColor: `grey.light`
-        })}
-      >
-        {media && (
-          <Img
-            fluid={media.fluid}
-            alt={media.title}
-            css={css({
-              width: `100%`
-            })}
-          />
-        )}
-      </div>
+      <PortfolioCardMedia media={media} />
     </PortfolioPageContainer>
   );
 }

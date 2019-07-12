@@ -4,28 +4,21 @@ import { css, Styled } from "theme-ui";
 
 const PortfolioCardDescription = (props) => {
   return (
-    <div
+    <Styled.p
       css={css({
-        overflow: `hidden`,
-        flex: 1,
+        color: `white`,
+        fontFamily: `body`,
+        lineHeight: 1.8,
+        fontSize: [2],
+        letterSpacing: 1,
+        textOverflow: `ellipsis`,
+        mt: 4,
+        mb: 0
       })}
       {...props}
     >
-      <Styled.p
-        css={css({
-          color: `white`,
-          fontFamily: `body`,
-          lineHeight: 1.8,
-          fontSize: [2],
-          letterSpacing: 1,
-          textOverflow: `ellipsis`,
-          mt: 4,
-          mb: 0,
-        })}
-      >
-        {props.children}
-      </Styled.p>
-    </div>
+      {props.children}
+    </Styled.p>
   );
 }
 

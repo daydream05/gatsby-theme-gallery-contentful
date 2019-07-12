@@ -8,6 +8,10 @@ export const portfolioTemplateQuery = graphql`
     contentfulPortfolio(fields: { slug: { eq: $slug }}) {
       title
       media {
+        file {
+          contentType
+          url
+        }
         fluid {
           ...GatsbyContentfulFluid_withWebp
         }
