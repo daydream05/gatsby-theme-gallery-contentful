@@ -93,7 +93,7 @@ const GalleryPage = ({ data, location }) => {
                         color: `black`,
                         opacity: 0.8,
                         fontSize: [2],
-                        mb: 2
+                        mb: 4,
                       })}
                     >
                       {node.title}
