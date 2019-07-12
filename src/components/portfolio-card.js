@@ -32,13 +32,15 @@ const PortfolioCard = (props) => {
           overflow: `hidden`
         })}
       >
-        <Img
-          fluid={image.fluid}
-          alt={title}
-          css={css({
-            width: `100%`
-          })}
-        />
+        {image &&
+          <Img
+            fluid={image.fluid}
+            alt={title}
+            css={css({
+              width: `100%`
+            })}
+          />
+        }
         <div
           className="card"
           css={css({

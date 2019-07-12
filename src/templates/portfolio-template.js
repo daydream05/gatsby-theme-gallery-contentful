@@ -5,7 +5,7 @@ export default PortfolioPage
 
 export const portfolioTemplateQuery = graphql`
   query($slug: String!) {
-    contentfulPhoto(fields: { slug: { eq: $slug }}) {
+    contentfulPortfolio(fields: { slug: { eq: $slug }}) {
       title
       media {
         fluid {

@@ -7,7 +7,7 @@ export default GalleryPage
 
 export const galleryQuery = graphql`
   query {
-    allContentfulPhoto {
+    allContentfulPortfolio {
       edges {
         node {
           id

@@ -9,7 +9,7 @@ import PortfolioPageContainer from './portfolio-page-container';
 
 
 const PhotoPageContent = ({ data, className }) => {
-  const { title, media } = data.contentfulPhoto
+  const { title, media } = data.contentfulPortfolio
   return (
     <PortfolioPageContainer className={className}>
       <PortfolioPageCategory>Animation</PortfolioPageCategory>

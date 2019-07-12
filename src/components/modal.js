@@ -17,7 +17,7 @@ const Modal = (props) => {
 
   const [showDialog, setShowDialog] = useState(isOpen)
   const data = useStaticQuery(photoQuery)
-  const photos = data.contentfulGallery.media
+  const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node)
   
   useEffect(() => {
     mousetrap.bind(`left`, next)
@@ -36,8 +36,8 @@ const Modal = (props) => {
   const findCurrentIndex = () => {
     let index
     index = findIndex(
-      photos,
-      photo => photo.fields.path === location.pathname
+      portfolioList,
+      (portfolio) => portfolio.fields.path === location.pathname
     )
 
     return index
@@ -49,14 +49,14 @@ const Modal = (props) => {
     }
     const currentIndex = findCurrentIndex()
     if( currentIndex || currentIndex === 0) {
-      let nextPhoto
+      let nextItem
       // wrap around if at end
-      if (currentIndex + 1 === photos.length) {
-        nextPhoto = photos[0]
+      if (currentIndex + 1 === portfolioList.length) {
+        nextItem = portfolioList[0]
       } else {
-        nextPhoto = photos[currentIndex + 1]
+        nextItem = portfolioList[currentIndex + 1]
       }
-      navigate(`${nextPhoto.fields.path}`);
+      navigate(`${nextItem.fields.path}`);
     }
   }
 
@@ -67,14 +67,14 @@ const Modal = (props) => {
 
     const currentIndex = findCurrentIndex()
     if (currentIndex || currentIndex === 0) {
-      let previousPhoto
+      let prevItem
       // wrap around if at start
       if (currentIndex === 0) {
-        previousPhoto = photos.slice(-1)[0];
+        prevItem = portfolioList.slice(-1)[0];
       } else {
-        previousPhoto = photos[currentIndex - 1]
+        prevItem = portfolioList[currentIndex - 1]
       }
-      navigate(`${previousPhoto.fields.path}`);
+      navigate(`${prevItem.fields.path}`);
     }
   }
 
@@ -111,9 +111,9 @@ const photoQuery = graphql`
         basePath
       }
     }
-    contentfulGallery {
-      media {
-        ... on ContentfulPhoto {
+    allContentfulPortfolio {
+      edges {
+        node {
           fields {
             path
           }

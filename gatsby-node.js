@@ -9,8 +9,8 @@ exports.onCreateNode = (
   // We create a url path for each image
   // using the title, gallery root path and id
   // e.g. /gallery/this-image-title-938128129/
-  if(node.internal.type === `ContentfulPhoto`) {
-    const slug = `${slugify(node.title)}-${node.id}`
+  if(node.internal.type === `ContentfulPortfolio`) {
+    const slug = `${node.slug}`
     const url = `${basePath}${slug}/`;
 
     console.log(node);
@@ -29,23 +29,6 @@ exports.onCreateNode = (
       value: slug,
     })
   }
-
-  if (node.internal.type === `ContentfulVideo`) {
-    const slug = slugify(node.title);
-    const url = `${basePath}${slug}-${node.id}/`;
-
-    createNodeField({
-      node,
-      name: `path`,
-      value: url
-    })
-
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-  } 
 }
 
 exports.createPages = ({ graphql, actions }, { basePath = `/gallery/` }) => {
@@ -56,10 +39,9 @@ exports.createPages = ({ graphql, actions }, { basePath = `/gallery/` }) => {
   const loadGallery = new Promise((resolve, reject) => {
     graphql(`
       {
-        contentfulGallery {
-          media {
-            __typename
-            ... on ContentfulPhoto {
+        allContentfulPortfolio {
+          edges {
+            node {
               fields {
                 path
                 slug
@@ -70,17 +52,17 @@ exports.createPages = ({ graphql, actions }, { basePath = `/gallery/` }) => {
       }
     `).then(result => {
       console.log(result);
-      const mediaList = result.data.contentfulGallery.media;
-      mediaList.map(media => {
-        if (media.__typename === `ContentfulPhoto`) {
-          createPage({
-            path: media.fields.path,
-            component: require.resolve(`./src/templates/portfolio-template.js`),
-            context: {
-              slug: media.fields.slug
-            }
-          });
-        }
+      const portfolioList = result.data.allContentfulPortfolio.edges;
+      portfolioList.map(({ node }) => {
+        createPage({
+          path: node.fields.path,
+          component: require.resolve(
+            `./src/templates/portfolio-template.js`
+          ),
+          context: {
+            slug: node.fields.slug
+          }
+        });
       });
       resolve();
     });

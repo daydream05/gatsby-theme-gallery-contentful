@@ -21,7 +21,7 @@ const GalleryPageContent = ({ data }) => {
           Gallery
         </Styled.h1>
         <Masonry>
-          {data.allContentfulPhoto.edges.map(({ node }) => {
+          {data.allContentfulPortfolio.edges.map(({ node }) => {
             return (
               <PortfolioCard
                 key={node.id}
