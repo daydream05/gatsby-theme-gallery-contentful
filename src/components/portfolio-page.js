@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from './layout'
-import PhotoPageContent from './photo-page-content'
+import PhotoPageContent from './portfolio-page-content'
 
 
 const PortfolioPage = ({ data, location }) => {
