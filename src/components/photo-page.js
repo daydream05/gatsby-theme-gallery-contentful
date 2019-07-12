@@ -7,6 +7,7 @@ import theme from '../gatsby-plugin-theme-ui'
 import Layout from './layout'
 import PhotoPageTitle from './photo-page-title'
 import PhotoPageCategory from "./photo-page-category";
+import PhotoPageContainer from './photo-page-container';
 
 
 const PhotoPage = ({ data, location }) => {
@@ -29,15 +30,7 @@ const PhotoPage = ({ data, location }) => {
 
   return (
     <Layout location={location} isModal={isModal}>
-      <div
-        css={css({
-          width: `100%`,
-          backgroundColor: `white`,
-          margin: `auto`,
-          maxWidth: theme.breakpoints.xl,
-          py: 4,
-          px: 4
-        })}
+      <PhotoPageContainer
       >
         <PhotoPageCategory>Animation</PhotoPageCategory>
         <PhotoPageTitle>{title}</PhotoPageTitle>
@@ -50,14 +43,14 @@ const PhotoPage = ({ data, location }) => {
           })}
         >
           <Img
-            fixed={media.fixed}
+            fluid={media.fluid}
             alt={media.title}
             css={css({
               width: `100%`
             })}
           />
         </div>
-      </div>
+      </PhotoPageContainer>
     </Layout>
   );
 }

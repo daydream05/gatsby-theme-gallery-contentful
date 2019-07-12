@@ -6,7 +6,7 @@ const RightArrow = props => {
   return (
     <div
       css={css({
-        position: `absolute`,
+        position: `fixed`,
         top: `50%`,
         right: 5,
         display: `flex`,

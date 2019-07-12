@@ -6,8 +6,6 @@ const CustomDialogOverlay = (props) => {
   return (
     <DialogOverlay
       css={css({
-        display: `flex`,
-        alignItems: `center`,
         zIndex: `modal`,
         background: "hsla(0,4%,95%,.95)",
         m: 0

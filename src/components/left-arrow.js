@@ -6,7 +6,7 @@ const LeftArrow = (props) => {
   return (
     <div
       css={css({
-        position: `absolute`,
+        position: `fixed`,
         top: `50%`,
         left: 5,
         display: `flex`,
