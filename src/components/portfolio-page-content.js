@@ -7,7 +7,7 @@ import PortfolioPageTitle from './portfolio-page-title'
 import PortfolioPageCategory from "./portfolio-page-category";
 import PortfolioPageContainer from './portfolio-page-container';
 
-import PortfolioCardMedia from './portfolio-card-media'
+import PortfolioPagedMedia from "./portfolio-page-media";
 
 
 const PhotoPageContent = ({ data, className }) => {
@@ -16,7 +16,7 @@ const PhotoPageContent = ({ data, className }) => {
     <PortfolioPageContainer className={className}>
       <PortfolioPageCategory>Animation</PortfolioPageCategory>
       <PortfolioPageTitle>{title}</PortfolioPageTitle>
-      <PortfolioCardMedia media={media} />
+      <PortfolioPagedMedia media={media} />
     </PortfolioPageContainer>
   );
 }
