@@ -15,7 +15,7 @@ const GalleryPageContent = ({ data }) => {
           css={css({
             color: `black`,
             textAlign: `center`,
-            mb: [4]
+            mb: [4],
           })}
         >
           Gallery
@@ -31,7 +31,7 @@ const GalleryPageContent = ({ data }) => {
                 category={node.category}
                 linkTo={node.fields.path}
                 description="We are 10 sparkling minds exploring human
-                    communication via digital assets..."
+                  communication via digital assets..."
               />
             );
           })}

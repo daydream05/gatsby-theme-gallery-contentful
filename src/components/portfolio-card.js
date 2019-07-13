@@ -88,7 +88,7 @@ const PortfolioCard = (props) => {
             `}
           >
             <button
-              tabindex="-1"
+              tabIndex="-1"
               css={css({
                 border: `2px solid white`,
                 backgroundColor: `unset`,
