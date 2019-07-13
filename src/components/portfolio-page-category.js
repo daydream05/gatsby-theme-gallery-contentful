@@ -12,7 +12,7 @@ const PortfolioPageCategory = (props) => {
         fontWeight: `bold`,
         color: `black`,
         opacity: 0.8,
-        fontSize: `0.5rem`,
+        fontSize: [0, 0, 1],
         mb: 4
       })}
       {...props}
