@@ -9,7 +9,7 @@ import theme from '../gatsby-plugin-theme-ui'
 
 
 const PortfolioCardMedia = (props) => {
-  const { media } = props
+  const { media, isBehindAModal } = props;
 
   const [playVideo, setPlayVideo] = useState(false)
 
@@ -32,7 +32,7 @@ const PortfolioCardMedia = (props) => {
               url={media.file.url}
               muted
               loop
-              playing={playVideo}
+              playing={isBehindAModal ? false : playVideo}
               width="100%"
               height="auto"
             />

@@ -11,7 +11,17 @@ import PortfolioCardDescription from './portfolio-card-description'
 import PortfolioCardCategory from './portfolio-card-category'
 
 const PortfolioCard = (props) => {
-  const { title, media, category, description, buttonText, linkTo, ...rest } = props
+  const {
+    title,
+    media,
+    category,
+    description,
+    buttonText,
+    linkTo,
+    isBehindAModal,
+    ...rest
+  } = props;
+  
   return (
     <Link
       to={linkTo}
@@ -34,7 +44,9 @@ const PortfolioCard = (props) => {
           overflow: `hidden`
         })}
       >
-        {media && <PortfolioCardMedia media={media} />}
+        {media && (
+          <PortfolioCardMedia media={media} isBehindAModal={isBehindAModal} />
+        )}
         <div
           className="card"
           css={css({
@@ -56,7 +68,7 @@ const PortfolioCard = (props) => {
           <div
             css={css({
               flex: 1,
-              overflow: `hidden`,
+              overflow: `hidden`
             })}
           >
             {category && (

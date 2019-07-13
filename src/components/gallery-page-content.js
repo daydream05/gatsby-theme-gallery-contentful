@@ -4,40 +4,41 @@ import { css, Styled } from "theme-ui";
 import Masonry from "./masonry";
 import PortfolioCard from "./portfolio-card";
 
-const GalleryPageContent = ({ data }) => {
+const GalleryPageContent = ({ data, isBehindAModal }) => {
   return (
-      <div
+    <div
+      css={css({
+        pt: [4]
+      })}
+    >
+      <Styled.h1
         css={css({
-          pt: [4]
+          color: `black`,
+          textAlign: `center`,
+          mb: [4]
         })}
       >
-        <Styled.h1
-          css={css({
-            color: `black`,
-            textAlign: `center`,
-            mb: [4],
-          })}
-        >
-          Gallery
-        </Styled.h1>
-        <Masonry>
-          {data.allContentfulPortfolio.edges.map(({ node }) => {
-            return (
-              <PortfolioCard
-                key={node.id}
-                className="grid-item"
-                title={node.title}
-                media={node.media}
-                category={node.category}
-                linkTo={node.fields.path}
-                description="We are 10 sparkling minds exploring human
+        Gallery
+      </Styled.h1>
+      <Masonry>
+        {data.allContentfulPortfolio.edges.map(({ node }, index) => {
+          return (
+            <PortfolioCard
+              isBehindAModal={isBehindAModal}
+              key={`${node.id}-${index}`}
+              className="grid-item"
+              title={node.title}
+              media={node.media}
+              category={node.category}
+              linkTo={node.fields.path}
+              description="We are 10 sparkling minds exploring human
                   communication via digital assets..."
-              />
-            );
-          })}
-        </Masonry>
-      </div>
-  )
+            />
+          );
+        })}
+      </Masonry>
+    </div>
+  );
 };
 
 export default GalleryPageContent;
