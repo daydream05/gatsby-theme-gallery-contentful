@@ -12,8 +12,8 @@ const PortfolioPageContainer = (props) => {
         backgroundColor: `white`,
         margin: `auto`,
         maxWidth: theme.breakpoints.xl,
-        py: 4,
-        px: [3,3,4]
+        py: [4,4,4,5],
+        px: [3,3,4,5]
       })}
       {...props}
     >
