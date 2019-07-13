@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { css } from "theme-ui";
 
+import theme from '../gatsby-plugin-theme-ui'
 
 const PortfolioCardCategory = (props) => {
   return (
@@ -11,10 +12,14 @@ const PortfolioCardCategory = (props) => {
         textTransform: `uppercase`,
         letterSpacing: 1,
         fontFamily: `body`,
-        color: `white`,
+        color: `black`,
         opacity: 0.8,
         fontSize: [0],
-        mb: [2, 2, 3]
+        mb: [2, 2, 3],
+        mt: [0],
+        [theme.mediaQueries.md]: {
+          color: `white`
+        }
       })}
       {...props}
     >

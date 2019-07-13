@@ -40,8 +40,10 @@ const PortfolioCard = (props) => {
     >
       <section
         css={css({
-          position: `relative`,
-          overflow: `hidden`
+          [theme.mediaQueries.md]: {
+            position: `relative`,
+            overflow: `hidden`
+          }
         })}
       >
         {media && (
@@ -50,25 +52,29 @@ const PortfolioCard = (props) => {
         <div
           className="card"
           css={css({
-            display: `flex`,
-            flexDirection: `column`,
-            boxSizing: `border-box`,
-            transition: `0.3s`,
-            visibility: `hidden`,
-            opacity: 0,
-            px: [3, 4, 4],
+            px: [3, 3, 4],
             py: [3, 4, 4],
-            height: `100%`,
-            position: `absolute`,
-            top: 0,
-            backgroundColor: `black`,
-            width: `100%`
+            [theme.mediaQueries.md]: {
+              display: `flex`,
+              flexDirection: `column`,
+              boxSizing: `border-box`,
+              transition: `0.3s`,
+              visibility: `hidden`,
+              opacity: 0,
+              height: `100%`,
+              position: `absolute`,
+              top: 0,
+              backgroundColor: `black`,
+              width: `100%`
+            }
           })}
         >
           <div
             css={css({
-              flex: 1,
-              overflow: `hidden`
+              [theme.mediaQueries.md]: {
+                flex: 1,
+                overflow: `hidden`
+              }
             })}
           >
             {category && (
@@ -84,28 +90,33 @@ const PortfolioCard = (props) => {
           <div
             css={css`
               position: relative;
-              &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                transform: translateY(-100%);
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(
-                  180deg,
-                  rgba(29, 29, 29, 0) 3%,
-                  rgb(29, 29, 29) 100%
-                );
-              }
             `}
           >
+            <div
+              css={css({
+                display: `none`,
+                [theme.mediaQueries.md]: {
+                  display: `block`,
+                  position: `absolute`,
+                  top: 0,
+                  transform: `translateY(-100%)`,
+                  width: `100%`,
+                  height: `100%`,
+                  background: `linear-gradient(
+                    180deg,
+                    rgba(29, 29, 29, 0) 3%,
+                    rgb(29, 29, 29) 100%
+                  )`
+                }
+              })}
+            />
             <button
               tabIndex="-1"
               css={css({
-                border: `2px solid white`,
+                border: `2px solid`,
                 backgroundColor: `unset`,
-                color: `white`,
                 cursor: `pointer`,
+                color: `black`,
                 fontSize: [1],
                 textTransform: `uppercase`,
                 py: 3,
@@ -120,6 +131,9 @@ const PortfolioCard = (props) => {
                   backgroundColor: `white`,
                   transition: `0.3s`,
                   color: `black`
+                },
+                [theme.mediaQueries.md]: {
+                  color: `white`
                 }
               })}
             >

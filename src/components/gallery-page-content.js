@@ -31,8 +31,7 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
               media={node.media}
               category={node.category}
               linkTo={node.fields.path}
-              description="We are 10 sparkling minds exploring human
-                  communication via digital assets..."
+              description={node.description && node.description.internal.content}
             />
           );
         })}

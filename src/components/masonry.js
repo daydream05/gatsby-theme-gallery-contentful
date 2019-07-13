@@ -19,7 +19,7 @@ const Masonry = (props) => {
         mx: `auto`,
         my: 0,
         ".grid-item": {
-          marginBottom: [3],
+          marginBottom: [3,4,3],
           width: [
             `calc(100vw - ${theme.space[4]}px)`,
             `calc(100vw - ${theme.space[4]}px)`,

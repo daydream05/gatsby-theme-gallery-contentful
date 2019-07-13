@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { css, Styled } from "theme-ui";
 
+import theme from '../gatsby-plugin-theme-ui'
 
 const PortfolioCardTitle = (props) => {
   return (
@@ -12,9 +13,13 @@ const PortfolioCardTitle = (props) => {
         letterSpacing: 1,
         fontFamily: `heading`,
         fontWeight: `bold`,
-        color: `white`,
+        color: `black`,
         fontSize: [2],
         mb: 0,
+        [theme.mediaQueries.md]: {
+          color: `white`,
+          textOverflow: `ellipsis`
+        }
       })}
       {...props}
     >
