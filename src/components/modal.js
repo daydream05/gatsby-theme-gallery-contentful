@@ -22,13 +22,11 @@ const Modal = (props) => {
   useEffect(() => {
     mousetrap.bind(`left`, next)
     mousetrap.bind(`right`, previous)
-    mousetrap.bind(`space`, next)
     mousetrap.bind(`escape`, dismiss)
 
     return () => {
       mousetrap.unbind(`left`)
       mousetrap.unbind(`right`)
-      mousetrap.unbind(`space`)
       mousetrap.unbind(`escape`)
     }
   }, [`left`, `right`, `space`, `escape`])
