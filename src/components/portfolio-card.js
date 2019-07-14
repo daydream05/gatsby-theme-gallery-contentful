@@ -142,7 +142,7 @@ const PortfolioCard = (props) => {
                     backgroundColor: `white`,
                   }
                 },
-                variant: "buttons.default"
+                variant: "buttons.secondary"
               })}
             >
               {buttonText}
