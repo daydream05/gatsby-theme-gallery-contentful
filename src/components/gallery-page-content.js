@@ -1,6 +1,8 @@
 import React from "react";
 import { css, Styled } from "theme-ui";
 
+import theme from '../gatsby-plugin-theme-ui'
+
 import Masonry from "./masonry";
 import PortfolioCard from "./portfolio-card";
 
@@ -13,9 +15,13 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
     >
       <Styled.h1
         css={css({
+          maxWidth: theme.breakpoints.xl,
+          px: 3,
+          mb: [4,4,5],
+          mx: `auto`,
           color: `black`,
-          textAlign: `center`,
-          mb: [4]
+          textAlign: `left`,
+          fontSize: [5,5,6]
         })}
       >
         Gallery
@@ -31,7 +37,9 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
               media={node.media}
               category={node.category}
               linkTo={node.fields.path}
-              description={node.description && node.description.internal.content}
+              description={
+                node.description && node.description.internal.content
+              }
             />
           );
         })}
