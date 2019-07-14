@@ -6,7 +6,6 @@ import GalleryPageHeading from "./gallery-page-heading";
 import GalleryPageMasonry from './gallery-page-masonry'
 
 const GalleryPageContent = ({ data, isBehindAModal }) => {
-  console.log(data)
   return (
     <div
       css={css({
@@ -14,7 +13,7 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
       })}
     >
       <GalleryPageHeading
-        title={data.site.siteMetadata.baseTitle}
+        title={data.site.siteMetadata.title}
       />
       <GalleryPageMasonry
         data={data}

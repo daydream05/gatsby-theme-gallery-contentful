@@ -1,7 +1,5 @@
 import { base } from '@theme-ui/presets'
 
-console.log(base)
-
 const breakpoints = [`320px`, `550px`, `750px`, `1000px`, `1200px`, `1600px`];
 
 breakpoints.xs = breakpoints[0];

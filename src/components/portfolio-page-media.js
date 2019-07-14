@@ -7,8 +7,6 @@ import { css } from "theme-ui";
 const PortfolioPageMedia = props => {
   const { media } = props;
 
-  console.log(media);
-
   if (media.file.contentType === "video/mp4") {
     return (
       <ReactPlayer

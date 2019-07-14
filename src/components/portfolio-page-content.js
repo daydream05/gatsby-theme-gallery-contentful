@@ -12,7 +12,6 @@ import PortfolioPageDescription from './portfolio-page-description';
 
 const PortfolioPageContent = ({ data, className }) => {
   const { title, media, category, description } = data.contentfulPortfolio
-  console.log(data.contentfulPortfolio);
   return (
     <PortfolioPageContainer className={className}>
         <PortfolioPageCategory>{category}</PortfolioPageCategory>

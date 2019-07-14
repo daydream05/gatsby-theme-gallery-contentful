@@ -7,7 +7,7 @@ import SEO from "./seo";
 
 const GalleryPage = ({ data, location }) => {
   const isBehindAModal = location.state && location.state.isBehindAModal
-  console.log(data)
+  
   return (
     <Layout location={location}>
       <SEO

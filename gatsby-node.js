@@ -13,15 +13,11 @@ exports.onCreateNode = (
     const slug = `${node.slug}`
     const url = `${basePath}${slug}/`;
 
-    console.log(node);
-
     createNodeField({
       node,
       name: `path`,
       value: url,
     })
-
-    console.log(`path created`)
 
     createNodeField({
       node,
@@ -51,7 +47,6 @@ exports.createPages = ({ graphql, actions }, { basePath = `/gallery/` }) => {
         }
       }
     `).then(result => {
-      console.log(result);
       const portfolioList = result.data.allContentfulPortfolio.edges;
       portfolioList.map(({ node }) => {
         createPage({
