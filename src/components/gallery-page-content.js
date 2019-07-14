@@ -12,13 +12,8 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
         pt: [4]
       })}
     >
-      <GalleryPageHeading
-        title={data.site.siteMetadata.title}
-      />
-      <GalleryPageMasonry
-        data={data}
-        isBehindAModal={isBehindAModal}
-      />
+      <GalleryPageHeading title={data.site.siteMetadata.baseTitle} />
+      <GalleryPageMasonry data={data} isBehindAModal={isBehindAModal} />
     </div>
   );
 }
