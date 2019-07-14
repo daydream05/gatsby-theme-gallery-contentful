@@ -21,6 +21,9 @@ const GalleryPageMasonry = ({ data, isBehindAModal, ...rest }) => {
         mx: `auto`,
         maxWidth: theme.breakpoints.xl,
         my: 0,
+        [theme.mediaQueries.xl]: {
+          maxWidth: `unset`,
+        },
         ".grid-item": {
           marginBottom: [3, 4, 3],
           width: [
@@ -30,7 +33,7 @@ const GalleryPageMasonry = ({ data, isBehindAModal, ...rest }) => {
             `30vw`,
             `20vw`
           ]
-        }
+        },
       })}
       {...rest}
     >
