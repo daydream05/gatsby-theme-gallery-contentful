@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { css } from 'theme-ui'
 
-import theme from 'gatsby-plugin-theme-ui'
+import theme from '../gatsby-plugin-theme-ui'
 
 import PortfolioCardMedia from './portfolio-card-media'
 import PortfolioCardTitle from './portfolio-card-title'
 import PortfolioCardDescription from './portfolio-card-description'
 import PortfolioCardCategory from './portfolio-card-category'
+
 
 const PortfolioCard = (props) => {
   const {
@@ -113,19 +114,19 @@ const PortfolioCard = (props) => {
             <button
               tabIndex="-1"
               css={css({
-                border: `2px solid`,
+                display: `flex`,
+                justifyContent: `space-between`,
+                alignItems: `center`,
+                alignSelf: `flex-start`,
                 backgroundColor: `unset`,
-                cursor: `pointer`,
                 color: `black`,
                 fontSize: [1],
                 textTransform: `uppercase`,
                 py: 3,
                 px: 3,
                 letterSpacing: 2,
-                display: `flex`,
-                justifyContent: `space-between`,
-                alignItems: `center`,
-                alignSelf: `flex-start`,
+                border: `2px solid`,
+                cursor: `pointer`,
                 transition: `0.3s`,
                 ":hover, :focus": {
                   backgroundColor: `white`,
@@ -133,8 +134,15 @@ const PortfolioCard = (props) => {
                   color: `black`
                 },
                 [theme.mediaQueries.md]: {
-                  color: `white`
-                }
+                  color: `white`,
+                  border: `2px solid white`,
+                  backgroundColor: `unset`,
+                  ":hover, :focus": {
+                    color: `black`,
+                    backgroundColor: `white`,
+                  }
+                },
+                variant: "buttons.default"
               })}
             >
               {buttonText}

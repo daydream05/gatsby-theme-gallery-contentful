@@ -4,6 +4,7 @@ module.exports = (themeOptions) => {
       basePath: themeOptions.basePath,
     },
     plugins: [
+      `gatsby-plugin-emotion`,
       `gatsby-plugin-theme-ui`,
       {
         resolve: `gatsby-source-contentful`,

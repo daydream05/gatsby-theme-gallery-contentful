@@ -20,4 +20,4 @@ export default {
   ...base,
   mediaQueries,
   breakpoints,
-};
+}
