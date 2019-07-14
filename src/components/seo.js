@@ -132,8 +132,8 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string,
   image: PropTypes.string,
-  imageWidth: PropTypes.string,
-  imageHeight: PropTypes.string,
+  imageWidth: PropTypes.number,
+  imageHeight: PropTypes.number,
 };
 
 export default SEO
