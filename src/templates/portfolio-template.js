@@ -8,6 +8,11 @@ export const portfolioTemplateQuery = graphql`
     contentfulPortfolio(fields: { slug: { eq: $slug }}) {
       title
       category
+      description {
+        internal {
+          content
+        }
+      }
       media {
         file {
           contentType
