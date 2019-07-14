@@ -14,7 +14,7 @@ const GalleryPageHeading = (props) => {
         mb: [4, 4, 4],
         mx: `auto`,
         color: `black`,
-        textAlign: `left`,
+        textAlign: [`left`, `left`, `center`],
         fontSize: [5, 5, 6]
       })}
     >
