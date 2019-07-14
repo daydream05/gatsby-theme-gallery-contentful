@@ -6,6 +6,11 @@ export default GalleryPage
 
 export const galleryQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        baseTitle
+      }
+    }
     allContentfulPortfolio {
       edges {
         node {
