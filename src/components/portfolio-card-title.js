@@ -15,7 +15,7 @@ const PortfolioCardTitle = (props) => {
         fontWeight: `bold`,
         color: `black`,
         fontSize: [2],
-        mb: 0,
+        mb: 4,
         [theme.mediaQueries.md]: {
           color: `white`,
           textOverflow: `ellipsis`

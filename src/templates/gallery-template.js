@@ -28,7 +28,7 @@ export const galleryQuery = graphql`
               url
             }
             fluid(maxWidth: 3000) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
           fields {

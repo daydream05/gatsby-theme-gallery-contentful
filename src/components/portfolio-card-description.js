@@ -13,7 +13,6 @@ const PortfolioCardDescription = (props) => {
         lineHeight: 1.8,
         fontSize: [2,2,1],
         letterSpacing: 1,
-        mt: 4,
         mb: [4,4,0],
         [theme.mediaQueries.md]: {
           color: `white`,
