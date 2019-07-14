@@ -3,6 +3,8 @@ module.exports = (themeOptions) => {
     siteMetadata: {
       basePath: themeOptions.basePath,
       baseTitle: themeOptions.baseTitle || `Portfolio`,
+      siteUrl: themeOptions.siteMetadata.siteUrl,
+      siteName: themeOptions.siteMetadata.siteName,
     },
     plugins: [
       `gatsby-plugin-emotion`,

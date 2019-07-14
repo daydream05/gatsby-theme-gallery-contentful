@@ -1,7 +1,6 @@
 import React from 'react'
 import { PageRenderer, useStaticQuery, graphql } from 'gatsby'
 
-console.log(PageRenderer)
 // We dynamically import Modal
 let Modal
 import(`../components/modal`).then(modal => {

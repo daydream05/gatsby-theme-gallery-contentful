@@ -25,6 +25,13 @@ export const portfolioTemplateQuery = graphql`
           ...GatsbyContentfulFixed_withWebp
         }
       }
+      shareImage: media {
+        resize(width: 1200, height: 1200) {
+          src
+          width
+          height
+        }
+      }
       fields {
         slug
       }

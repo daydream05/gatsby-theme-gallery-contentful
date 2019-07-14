@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from './layout'
+import SEO from './seo'
 import PortfolioPageContent from './portfolio-page-content'
 
 
@@ -21,8 +22,20 @@ const PortfolioPage = ({ data, location }) => {
     isModal = true
   }
 
+  const { title, description, shareImage, media } = data.contentfulPortfolio
+
+  const isVideo = media.file.contentType === `video/mp4`
+
   return (
     <Layout location={location} isModal={isModal}>
+      <SEO
+        title={title}
+        description={description ? description.internal.content : null}
+        image={!isVideo && shareImage ? shareImage.resize.src : null}
+        imageWidth={!isVideo && shareImage ? shareImage.resize.width : null}
+        imageHeight={!isVideo && shareImage ? shareImage.resize.height : null}
+        video={isVideo && media ? media.file.url : null}
+      />
       <PortfolioPageContent data={data} />
     </Layout>
   );
