@@ -84,7 +84,7 @@ const PortfolioCard = (props) => {
               <PortfolioCardCategory>{category}</PortfolioCardCategory>
             )}
             <PortfolioCardTitle>{title}</PortfolioCardTitle>
-            {title && (
+            {description && (
               <PortfolioCardDescription>
                 {description}
               </PortfolioCardDescription>
