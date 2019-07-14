@@ -8,13 +8,14 @@ const CustomDialogOverlay = (props) => {
       css={css({
         zIndex: `modal`,
         background: "hsla(0,4%,95%,.95)",
-        m: 0
+        py: 5,
+        px: [3, 3, 3, 4, 6,0]
       })}
       {...props}
     >
       {props.children}
     </DialogOverlay>
-  )
+  );
 }
 
 export default CustomDialogOverlay

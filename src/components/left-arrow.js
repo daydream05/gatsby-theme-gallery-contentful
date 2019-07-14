@@ -8,7 +8,7 @@ const LeftArrow = (props) => {
       css={css({
         position: `fixed`,
         top: `50%`,
-        left: 5,
+        left: [3,3,3,3,5],
         display: `flex`,
         alignItems: `center`,
       })}

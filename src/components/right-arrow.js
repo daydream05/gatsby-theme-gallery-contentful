@@ -8,9 +8,9 @@ const RightArrow = props => {
       css={css({
         position: `fixed`,
         top: `50%`,
-        right: 5,
+        right: [3, 3, 3, 3, 5],
         display: `flex`,
-        alignItems: `center`,
+        alignItems: `center`
       })}
     >
       <FaLongArrowAltRight
@@ -18,7 +18,7 @@ const RightArrow = props => {
           fontSize: 4,
           color: `black`,
           cursor: `pointer`,
-          translteY: `-50%`,
+          translteY: `-50%`
         })}
         aria-label="Previous page"
         {...props}

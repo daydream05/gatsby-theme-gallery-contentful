@@ -9,7 +9,6 @@ const CustomDialogContent = (props) => {
   return (
     <DialogContent
       css={css({
-        mt: 5,
         p: 0,
         background: `unset`,
         width: `100%`,
