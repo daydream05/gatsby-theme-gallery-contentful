@@ -9,6 +9,8 @@ import PortfolioCardMedia from './portfolio-card-media'
 import PortfolioCardTitle from './portfolio-card-title'
 import PortfolioCardDescription from './portfolio-card-description'
 import PortfolioCardCategory from './portfolio-card-category'
+import PortfolioCardTextOverlay from './portfolio-card-text-overlay'
+import PortfolioCardButton from './portfolio-card-button'
 
 
 const PortfolioCard = (props) => {
@@ -93,60 +95,12 @@ const PortfolioCard = (props) => {
               position: relative;
             `}
           >
-            <div
-              css={css({
-                display: `none`,
-                [theme.mediaQueries.md]: {
-                  display: `block`,
-                  position: `absolute`,
-                  top: 0,
-                  transform: `translateY(-100%)`,
-                  width: `100%`,
-                  height: `100%`,
-                  background: `linear-gradient(
-                    180deg,
-                    rgba(29, 29, 29, 0) 3%,
-                    rgb(29, 29, 29) 100%
-                  )`
-                }
-              })}
-            />
-            <button
+            <PortfolioCardTextOverlay />
+            <PortfolioCardButton
               tabIndex="-1"
-              css={css({
-                display: `flex`,
-                justifyContent: `space-between`,
-                alignItems: `center`,
-                alignSelf: `flex-start`,
-                backgroundColor: `unset`,
-                color: `black`,
-                fontSize: [1],
-                textTransform: `uppercase`,
-                py: 3,
-                px: 3,
-                letterSpacing: 2,
-                border: `2px solid`,
-                cursor: `pointer`,
-                transition: `0.3s`,
-                ":hover, :focus": {
-                  backgroundColor: `white`,
-                  transition: `0.3s`,
-                  color: `black`
-                },
-                [theme.mediaQueries.md]: {
-                  color: `white`,
-                  border: `2px solid white`,
-                  backgroundColor: `unset`,
-                  ":hover, :focus": {
-                    color: `black`,
-                    backgroundColor: `white`,
-                  }
-                },
-                variant: "buttons.secondary"
-              })}
             >
               {buttonText}
-            </button>
+            </PortfolioCardButton>
           </div>
         </div>
       </section>

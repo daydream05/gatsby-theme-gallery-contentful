@@ -19,10 +19,15 @@ const PortfolioCardMedia = (props) => {
         onEnter={() => setPlayVideo(true)}
         onLeave={() => setPlayVideo(false)}
       >
-        <div>
+        <div
+          css={css({
+            display: `inline-block`,
+          })}
+        >
           <div
             css={css({
               display: "none",
+              overflow: `hidden`,
               [theme.mediaQueries.lg]: {
                 display: `block`
               }
@@ -45,11 +50,7 @@ const PortfolioCardMedia = (props) => {
               }
             })}
           >
-            <ReactPlayer
-              url={media.file.url}
-              width="100%"
-              height="auto"
-            />
+            <ReactPlayer url={media.file.url} width="100%" height="auto" />
           </div>
         </div>
       </Waypoint>
