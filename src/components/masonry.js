@@ -17,6 +17,7 @@ const Masonry = (props) => {
       options={masonryOptions}
       css={css({
         mx: `auto`,
+        maxWidth: theme.breakpoints.xl,
         my: 0,
         ".grid-item": {
           marginBottom: [3,4,3],
