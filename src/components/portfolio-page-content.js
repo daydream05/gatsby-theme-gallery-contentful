@@ -1,26 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { css } from 'theme-ui'
 
-import PortfolioPageTitle from './portfolio-page-title'
-import PortfolioPageCategory from "./portfolio-page-category";
 import PortfolioPageContainer from './portfolio-page-container';
 
+import PortfolioPageHeader from './portfolio-page-header'
 import PortfolioPagedMedia from "./portfolio-page-media";
-import PortfolioPageDescription from './portfolio-page-description';
 
 
-const PortfolioPageContent = ({ data, className }) => {
+const PortfolioPageContent = ({ data }) => {
   const { title, media, category, description } = data.contentfulPortfolio
   return (
-    <PortfolioPageContainer className={className}>
-        <PortfolioPageCategory>{category}</PortfolioPageCategory>
-        <PortfolioPageTitle>{title}</PortfolioPageTitle>
-        {description && (
-          <PortfolioPageDescription>
-            {description.internal.content}
-          </PortfolioPageDescription>
-        )}
+    <PortfolioPageContainer>
+      <PortfolioPageHeader
+        title={title}
+        category={category}
+        description={description}
+      />
       <PortfolioPagedMedia media={media} />
     </PortfolioPageContainer>
   );
