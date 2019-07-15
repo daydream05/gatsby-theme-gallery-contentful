@@ -6,8 +6,12 @@ import { css } from 'theme-ui'
 
 const CloseButton = (props) => {
   return (
-    <div
+    <button
       css={css({
+        background: `unset`,
+        padding: 0,
+        border: `none`,
+        display: `block`,
         color: `black`,
         fontSize: 6,
         fontFamily: `body`,
@@ -17,7 +21,7 @@ const CloseButton = (props) => {
         right: [3, 3, 4, 4, 5],
         cursor: `pointer`,
         transition: `transform .3s`,
-        transform: `translateZ(0) rotate(45deg)`,
+        transform: `rotate(45deg)`,
         width: 48,
         height: 48,
         zIndex: 1,
@@ -27,30 +31,34 @@ const CloseButton = (props) => {
         }
       })}
       aria-label="Close"
-      role="button"
-      tabindex="0"
       {...props}
     >
       <div
         css={css({
-          width: 8,
-          height: 48,
-          backgroundColor: `black`,
-          margin: `auto`
+          position: `relative`,
         })}
-      />
-      <div
-        css={css({
-          width: 48,
-          height: 8,
-          backgroundColor: `black`,
-          top: `-50%`,
-          margin: `auto`,
-          transform: `translateY(-50%)`,
-          position: `relative`
-        })}
-      />
-    </div>
+      >
+        <div
+          css={css({
+            width: 8,
+            height: 48,
+            backgroundColor: `black`,
+            margin: `auto`
+          })}
+        />
+        <div
+          css={css({
+            width: 48,
+            height: 8,
+            backgroundColor: `black`,
+            top: `50%`,
+            margin: `auto`,
+            transform: `translateY(-50%)`,
+            position: `absolute`
+          })}
+        />
+      </div>
+    </button>
   );
 }
 

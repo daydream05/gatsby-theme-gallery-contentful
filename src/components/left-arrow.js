@@ -4,17 +4,19 @@ import { css } from "theme-ui"
 
 const LeftArrow = (props) => {
   return (
-    <div
-      role="button"
-      tabindex="0"
+    <button
       aria-label="Previous page"
       css={css({
+        background: `unset`,
+        padding: 0,
+        border: 0,
         position: `fixed`,
         top: `50%`,
         left: [3, 3, 3, 3, 5],
         display: `flex`,
         alignItems: `center`
       })}
+      {...props}
     >
       <FaLongArrowAltLeft
         css={css({
@@ -23,9 +25,8 @@ const LeftArrow = (props) => {
           cursor: `pointer`,
           translateY: `-50%`
         })}
-        {...props}
       />
-    </div>
+    </button>
   );
 }
 

@@ -4,17 +4,19 @@ import { css } from "theme-ui"
 
 const RightArrow = props => {
   return (
-    <div
-      role="button"
-      tabindex="0"
+    <button
       aria-label="Next page"
       css={css({
+        background: `unset`,
+        padding: 0,
+        border: 0,
         position: `fixed`,
         top: `50%`,
         right: [3, 3, 3, 3, 5],
         display: `flex`,
         alignItems: `center`
       })}
+      {...props}
     >
       <FaLongArrowAltRight
         css={css({
@@ -23,9 +25,8 @@ const RightArrow = props => {
           cursor: `pointer`,
           translteY: `-50%`
         })}
-        {...props}
       />
-    </div>
+    </button>
   );
 };
 

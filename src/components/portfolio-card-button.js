@@ -39,6 +39,7 @@ const PortfolioCardButton = (props) => {
         },
         variant: "buttons.secondary"
       })}
+      {...props}
     >
       {props.children}
     </button>

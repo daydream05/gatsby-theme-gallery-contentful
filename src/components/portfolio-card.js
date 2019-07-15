@@ -96,7 +96,9 @@ const PortfolioCard = (props) => {
               position: relative;
             `}
           >
-            <PortfolioCardButton tabIndex="-1">
+            <PortfolioCardButton
+              tabIndex="-1"
+            >
               {buttonText}
             </PortfolioCardButton>
             <PortfolioCardTextOverlay />

@@ -92,10 +92,10 @@ const Modal = (props) => {
   return (
     <DialogOverlay isOpen={showDialog} onDismiss={dismiss}>
       <DialogContent>
+        <CloseButton onClick={dismiss} />
         {children}
         <RightArrow onClick={next} />
-        <LeftArrow onClick={next} />
-        <CloseButton onClick={dismiss} />
+        <LeftArrow onClick={previous} />
       </DialogContent>
     </DialogOverlay>
   );
