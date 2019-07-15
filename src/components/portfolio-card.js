@@ -57,12 +57,11 @@ const PortfolioCard = (props) => {
         <div
           className="card"
           css={css({
-            px: 3,
-            py: 4,
+            variant: `portfolioCard.container`,
             [theme.mediaQueries.md]: {
+              boxSizing: `border-box`,
               display: `flex`,
               flexDirection: `column`,
-              boxSizing: `border-box`,
               transition: `0.3s`,
               visibility: `hidden`,
               opacity: 0,
@@ -70,10 +69,8 @@ const PortfolioCard = (props) => {
               position: `absolute`,
               top: 0,
               width: `100%`,
-              px: 4,
-              py: 4
+              variant: `portfolioCard.container`
             },
-            variant: `portfolioCard.container`
           })}
         >
           <div
