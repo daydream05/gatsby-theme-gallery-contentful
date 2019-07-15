@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { navigate, useStaticQuery, graphql } from 'gatsby'
 import findIndex from "lodash/findIndex"
@@ -89,9 +89,17 @@ const Modal = (props) => {
     navigate(data.site.siteMetadata.basePath);
   }
 
+  // we use this to hide initial focus
+  const initialFocus = useRef(null);
+
   return (
-    <DialogOverlay isOpen={showDialog} onDismiss={dismiss}>
+    <DialogOverlay
+      isOpen={showDialog}
+      onDismiss={dismiss}
+      initialFocusRef={initialFocus}
+    >
       <DialogContent>
+        <div ref={initialFocus} tabIndex="-1" />
         <CloseButton onClick={dismiss} />
         {children}
         <RightArrow onClick={next} />
