@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaPinterest, FaFacebook, FaTwitter } from 'react-icons/fa'
+import { FaPinterest, FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { css } from 'theme-ui'
 
 // stolen from gatsbyjs :)
@@ -34,7 +34,7 @@ const PortfolioPageShareMenu = (props) => {
         href={`https://pinterest.com/pin/create/button/${objectToParams({
           url: url,
           media: media,
-          description: title,
+          description: title
         })}`}
         title="Share on Pinterest"
         css={css({
@@ -48,7 +48,7 @@ const PortfolioPageShareMenu = (props) => {
         {...linkAttrs}
         href={`https://www.facebook.com/sharer.php${objectToParams({
           u: url,
-          t: title,
+          t: title
         })}`}
         title="Share on Facebook"
         css={css({
@@ -56,13 +56,13 @@ const PortfolioPageShareMenu = (props) => {
           borderRight: `none`
         })}
       >
-        <FaFacebook />
+        <FaFacebookF />
       </a>
       <a
         {...linkAttrs}
         href={`https://twitter.com/share${objectToParams({
           url: url,
-          text: title,
+          text: title
         })}`}
         title="Share on Twitter"
         css={css(linkStyle)}
