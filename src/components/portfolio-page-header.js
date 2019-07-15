@@ -7,9 +7,6 @@ import theme from '../gatsby-plugin-theme-ui'
 
 import PortfolioPageTitle from './portfolio-page-title'
 import PortfolioPageCategory from "./portfolio-page-category";
-import PortfolioPageContainer from './portfolio-page-container';
-
-import PortfolioPagedMedia from "./portfolio-page-media";
 import PortfolioPageDescription from './portfolio-page-description';
 
 const PortfolioPageHeader = (props) => {
@@ -39,7 +36,7 @@ const PortfolioPageHeader = (props) => {
             gridColumn: 1
           })}
         >
-          {description.internal.content}
+          {description}
         </PortfolioPageDescription>
       )}
     </header>

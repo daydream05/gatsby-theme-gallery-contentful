@@ -10,14 +10,16 @@ import PortfolioPagedMedia from "./portfolio-page-media";
 const PortfolioPageContent = ({ data }) => {
   const { title, media, category, description } = data.contentfulPortfolio
   return (
-    <PortfolioPageContainer>
-      <PortfolioPageHeader
-        title={title}
-        category={category}
-        description={description}
-      />
-      <PortfolioPagedMedia media={media} />
-    </PortfolioPageContainer>
+    <article>
+      <PortfolioPageContainer>
+        <PortfolioPageHeader
+          title={title}
+          category={category}
+          description={description.internal.content}
+        />
+        <PortfolioPagedMedia media={media} />
+      </PortfolioPageContainer>
+    </article>
   );
 }
 

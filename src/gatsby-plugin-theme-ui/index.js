@@ -9,6 +9,10 @@ breakpoints.lg = breakpoints[3];
 breakpoints.xl = breakpoints[4];
 breakpoints.xxl = breakpoints[5];
 
+const zIndices = {
+  modal: `101`
+};
+
 let mediaQueries = {};
 for (let breakpoint in breakpoints) {
   mediaQueries[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]})`;
@@ -18,4 +22,5 @@ export default {
   ...base,
   mediaQueries,
   breakpoints,
+  zIndices,
 }
