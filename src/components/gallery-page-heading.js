@@ -9,13 +9,16 @@ const GalleryPageHeading = (props) => {
   return (
     <Styled.h1
       css={css({
-        maxWidth: theme.breakpoints.xl,
-        px: 3,
+        mx: [2,2,3,4,4,6],
+        pl: 1,
         mb: [4, 4, 4],
-        mx: `auto`,
         color: `black`,
-        textAlign: [`left`, `left`, `center`],
-        fontSize: [6]
+        fontSize: [6],
+        [theme.mediaQueries.xxxl]: {
+          maxWidth: theme.breakpoints.xxxl,
+          mb: 5,
+          mx: `auto`,
+        }
       })}
     >
       {title}

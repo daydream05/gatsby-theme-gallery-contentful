@@ -15,56 +15,64 @@ const masonryOptions = {
 
 const GalleryPageMasonry = ({ data, isBehindAModal, ...rest }) => {
   return (
-    <ReactMasonry
-      options={masonryOptions}
+    <div
       css={css({
-        my: 0,
-        width: `100%`,
-        ".grid-sizer": {
-          width: [
-            `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/5 - ${theme.space[3]}px)`
-          ]
-        },
-        ".grid-item": {
-          marginBottom: [3, 4, 3],
-          mx: [2, 2, 2],
-          width: [
-            `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-            `calc(99.99% * 1/5 - ${theme.space[3]}px)`
-          ]
-        }
+        mx: [2, 2, 3, 3, 3]
       })}
-      {...rest}
     >
-      <div className="grid-sizer" />
-      {data.allContentfulPortfolio.edges.map(({ node }, index) => {
-        return (
-          <PortfolioCard
-            isBehindAModal={isBehindAModal}
-            key={`${node.id}-${index}`}
-            className={`grid-item`}
-            title={node.title}
-            media={node.media}
-            category={node.category}
-            linkTo={node.fields.path}
-            description={
-              node.description && node.description.internal.content
-            }
-          />
-        );
-      })}
-    </ReactMasonry>
+      <ReactMasonry
+        options={masonryOptions}
+        css={css({
+          my: 0,
+          width: `100%`,
+          ".grid-sizer": {
+            width: [
+              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/6 - ${theme.space[3]}px)`
+            ]
+          },
+          ".grid-item": {
+            marginBottom: [3, 4, 3],
+            mx: [2, 2, 2],
+            width: [
+              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
+              `calc(99.99% * 1/6 - ${theme.space[3]}px)`
+            ]
+          }
+        })}
+        {...rest}
+      >
+        <div className="grid-sizer" />
+        {data.allContentfulPortfolio.edges.map(({ node }, index) => {
+          return (
+            <PortfolioCard
+              isBehindAModal={isBehindAModal}
+              key={`${node.id}-${index}`}
+              className={`grid-item`}
+              title={node.title}
+              media={node.media}
+              category={node.category}
+              linkTo={node.fields.path}
+              description={
+                node.description && node.description.internal.content
+              }
+            />
+          );
+        })}
+      </ReactMasonry>
+    </div>
   );
 };
 
