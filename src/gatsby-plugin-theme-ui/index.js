@@ -23,12 +23,12 @@ const portfolioCard = {
   container: {
     bg: [`white`, `white`, `white`, `black`],
     px: [3, 3, 3, 4, 4],
-    py: [3, 3, 3, 3, 3, 4, 5]
+    py: [3, 4, 4, 4, 4]
   },
   title: {
     fontWeight: `bold`,
     fontFamily: `heading`,
-    fontSize: [3, 3, 3, 2],
+    fontSize: [3, 3, 3, 3],
     letterSpacing: 1,
     color: [`black`, `black`, `black`, `white`],
     mb: 4
