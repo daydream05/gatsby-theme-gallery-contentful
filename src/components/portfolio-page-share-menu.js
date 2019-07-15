@@ -3,6 +3,8 @@ import { FaPinterest, FaFacebookF, FaTwitter } from 'react-icons/fa'
 import { MdShare } from 'react-icons/md'
 import { css } from 'theme-ui'
 
+import theme from '../gatsby-plugin-theme-ui'
+
 // stolen from gatsbyjs :)
 
 // Should we use StaticQuery instead?
@@ -30,7 +32,7 @@ const PortfolioPageShareMenu = (props) => {
         gridRow: 1,
         justifySelf: `end`,
         display: `flex`,
-        flexDirection: `row-reverse`
+        flexDirection: [`row`, `row`, `row`, `row-reverse`],
       })}
     >
       <button
@@ -48,7 +50,7 @@ const PortfolioPageShareMenu = (props) => {
         <div
           css={css({
             display: `flex`,
-            flexDirection: `row-reverse`
+            flexDirection: [`row`, `row`, `row`, `row-reverse`]
           })}
         >
           <a
@@ -61,7 +63,11 @@ const PortfolioPageShareMenu = (props) => {
             title="Share on Pinterest"
             css={css({
               ...linkStyle,
-              borderRight: `none`
+              borderLeft: `none`,
+              [theme.mediaQueries.md]: {
+                borderLeft: border,
+                borderRight: `none`
+              }
             })}
           >
             <FaPinterest />
@@ -75,7 +81,11 @@ const PortfolioPageShareMenu = (props) => {
             title="Share on Facebook"
             css={css({
               ...linkStyle,
-              borderRight: `none`
+              borderLeft: `none`,
+              [theme.mediaQueries.md]: {
+                borderLeft: border,
+                borderRight: `none`
+              }
             })}
           >
             <FaFacebookF />
@@ -89,7 +99,11 @@ const PortfolioPageShareMenu = (props) => {
             title="Share on Twitter"
             css={css({
               ...linkStyle,
-              borderRight: `none`
+              borderLeft: `none`,
+              [theme.mediaQueries.md]: {
+                borderLeft: border,
+                borderRight: `none`
+              }
             })}
           >
             <FaTwitter />
@@ -102,17 +116,20 @@ const PortfolioPageShareMenu = (props) => {
 
 export default PortfolioPageShareMenu
 
+
+const border = `2px solid rgba(0,0,0,.2)`;
+
 const linkStyle = {
   color: `black`,
   opacity: 0.5,
   fontSize: 3,
-  border: `2px solid rgba(0,0,0,.2)`,
   width: `48px`,
   height: `48px`,
   display: `flex`,
   alignItems: `center`,
   justifyContent: `center`,
   boxSizing: `border-box`,
+  border
 }
 
 const linkAttrs = {
