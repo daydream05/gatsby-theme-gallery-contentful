@@ -26,7 +26,7 @@ const CloseButton = (props) => {
           transform: `translateZ(0) rotate(135deg)`
         }
       })}
-      aria-label="close button"
+      aria-label="Close"
       role="button"
       tabindex="0"
       {...props}

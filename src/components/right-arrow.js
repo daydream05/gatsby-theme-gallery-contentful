@@ -23,7 +23,6 @@ const RightArrow = props => {
           cursor: `pointer`,
           translteY: `-50%`
         })}
-        aria-label="Previous page"
         {...props}
       />
     </div>
