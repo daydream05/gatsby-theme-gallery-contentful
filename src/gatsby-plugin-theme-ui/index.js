@@ -52,10 +52,18 @@ const portfolioCard = {
     color: [`black`,`black`,`black`,`white`],
     fontFamily: `body`,
     lineHeight: 1.8,
-    fontSize: [2, 2, 1],
+    fontSize: [2, 2, 2, 1],
     mb: [4, 4, 4, 0],
-    letterSpacing: 1
+    letterSpacing: 1,
   }
+};
+
+
+const masonry = {
+  gridContainer: {},
+  grid: {},
+  gridItem: {},
+  gridSizer: {}
 };
 
 export default {
@@ -63,5 +71,6 @@ export default {
   mediaQueries,
   breakpoints,
   zIndices,
-  portfolioCard
+  portfolioCard,
+  masonry,
 }

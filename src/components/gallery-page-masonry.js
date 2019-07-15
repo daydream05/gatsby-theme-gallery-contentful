@@ -7,49 +7,49 @@ import PortfolioCard from "./portfolio-card"
 
 import theme from '../gatsby-plugin-theme-ui'
 
-const masonryOptions = {
-  itemSelector: ".grid-item",
-  columnWidth: `.grid-sizer`,
-  gutter: 16,
-};
+const gridItemWidth = [
+  `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/5 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/6 - ${theme.space[3]}px)`
+]
 
-const GalleryPageMasonry = ({ data, isBehindAModal, ...rest }) => {
+const GalleryPageMasonry = ({ data, isBehindAModal, gutter, ...rest }) => {
+
+  const masonryOptions = {
+    itemSelector: ".grid-item",
+    columnWidth: `.grid-sizer`,
+    gutter: theme.space[3],
+  }
+
   return (
     <div
       css={css({
-        mx: [2, 2, 3, 3, 3]
+        mx: [2, 2, 3, 3, 3],
+        variant: `masonry.gridContainer`,
       })}
     >
       <ReactMasonry
-        options={masonryOptions}
+        options={{
+          ...masonryOptions,
+          gutter
+        }}
         css={css({
           my: 0,
           width: `100%`,
           ".grid-sizer": {
-            width: [
-              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/6 - ${theme.space[3]}px)`
-            ]
+            width: gridItemWidth,
+            variant: `masonry.gridSizer`,
           },
           ".grid-item": {
             marginBottom: [5, 5, 5, 3],
             mx: [2, 2, 2],
-            width: [
-              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
-              `calc(99.99% * 1/6 - ${theme.space[3]}px)`
-            ]
+            width: gridItemWidth,
+            variant: `masonry.gridItem`,
           }
         })}
         {...rest}
@@ -78,7 +78,12 @@ const GalleryPageMasonry = ({ data, isBehindAModal, ...rest }) => {
 
 GalleryPageMasonry.propTypes = {
   data: PropTypes.object.isRequired,
-  isBehindAModal: PropTypes.bool
+  isBehindAModal: PropTypes.bool,
+  gutter: PropTypes.number,
 };
+
+GalleryPageMasonry.defaultProps = {
+  gutter: theme.space[3],
+}
 
 export default GalleryPageMasonry
