@@ -57,7 +57,7 @@ const portfolioCard = {
     mb: [4, 4, 4, 0],
     letterSpacing: 1
   }
-};
+}
 
 
 const masonry = {

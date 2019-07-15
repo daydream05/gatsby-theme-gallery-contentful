@@ -2,8 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import { css } from "theme-ui";
 
-import theme from '../gatsby-plugin-theme-ui'
-
 const PortfolioCardCategory = (props) => {
   return (
     <span

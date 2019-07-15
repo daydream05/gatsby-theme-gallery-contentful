@@ -10,8 +10,6 @@ import PortfolioPagedMedia from "./portfolio-page-media";
 const PortfolioPageContent = (props) => {
   const { title, media, category, description } = props.data.contentfulPortfolio
 
-  console.log(props.pageUrl);
-
   return (
     <article>
       <PortfolioPageContainer>
