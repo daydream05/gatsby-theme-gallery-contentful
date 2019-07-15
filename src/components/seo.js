@@ -37,72 +37,16 @@ const SEO = ({
 
   const metaDescription = description
 
+  const { siteUrl, siteName } = site.siteMetadata
+
   return (
     <Helmet
       htmlAttributes={{
         lang
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.siteName}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription
-        },
-        {
-          property: `og:title`,
-          content: title
-        },
-        {
-          property: `og:description`,
-          content: metaDescription
-        },
-        {
-          property: `og:type`,
-          content: `website`
-        },
-        {
-          property: `og:image`,
-          content: image
-        },
-        {
-          property: `og:image:width`,
-          content: imageWidth
-        },
-        {
-          property: `og:image:height`,
-          content: imageHeight
-        },
-        {
-          property: `og:url`,
-          content: site.siteMetadata.siteUrl
-        },
-         {
-           property: `og:video`,
-           content: video,
-         },
-        {
-          name: `twitter:card`,
-          content: `summary`
-        },
-        {
-          name: `twitter:creator`,
-          content: author
-        },
-        {
-          name: `twitter:title`,
-          content: title
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription
-        },
-        {
-          name: `twitter:image`,
-          content: image
-        }
-      ]
-        .concat(
+      titleTemplate={`%s | ${siteName}`}
+      meta={[].concat(
           keywords.length > 0
             ? {
                 name: `keywords`,
@@ -111,7 +55,26 @@ const SEO = ({
             : []
         )
         .concat(meta)}
-    />
+    >
+      {/** Should we use "og:type" "article" for each individual portfolio page? */}
+      <meta property="og:type" content="website" />
+      {siteUrl && <meta property="og:url" content={siteUrl} />}
+      {title && <meta property="og:title" content={title} />}
+      {description && <meta property="og:description" content={description} />}
+      {image && <meta property="og:image" content={image} />}
+      {imageWidth && <meta property="og:image:width" content={imageWidth} />}
+      {imageHeight && <meta property="og:image:height" content={imageHeight} />}
+      {video && <meta property="og:video" content={video} />}
+      
+      {/** Twitter cards */}
+      <meta name="twitter:card" content="summary" />
+      {title && <meta name="twitter:title" content={title} />}
+      {description && <meta name="twitter:description" content={description} />}
+      {image && <meta name="twitter:image" content={image} />}
+      {imageWidth && <meta name="twitter:image:width" content={imageWidth} />}
+      {imageHeight && <meta name="twitter:image:height" content={imageHeight} />}
+      {video && <meta name="twitter:video" content={video} />}
+    </Helmet>
   );
 }
 
