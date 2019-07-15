@@ -1,4 +1,3 @@
-import React from 'react'
 import { graphql } from 'gatsby'
 
 import GalleryPage from '../components/gallery-page'
@@ -7,17 +6,29 @@ export default GalleryPage
 
 export const galleryQuery = graphql`
   query {
-    allContentfulPhoto {
+    site {
+      siteMetadata {
+        baseTitle
+      }
+    }
+    allContentfulPortfolio {
       edges {
         node {
           id
           title
-          media {
-            fluid {
-              ...GatsbyContentfulFluid_withWebp
+          category
+          description {
+            internal {
+              content
             }
-            fixed {
-              ...GatsbyContentfulFixed_withWebp
+          }
+          media {
+            file {
+              contentType
+              url
+            }
+            fluid(maxWidth: 3000) {
+              ...GatsbyContentfulFluid_withWebp_noBase64
             }
           }
           fields {
