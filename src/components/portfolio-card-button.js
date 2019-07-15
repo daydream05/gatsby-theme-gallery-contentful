@@ -22,6 +22,7 @@ const PortfolioCardButton = (props) => {
         border: `2px solid`,
         cursor: `pointer`,
         transition: `0.3s`,
+        mt: [0, 0, 1],
         ":hover, :focus": {
           backgroundColor: `white`,
           transition: `0.3s`,

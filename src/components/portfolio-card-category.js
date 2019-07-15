@@ -10,16 +10,7 @@ const PortfolioCardCategory = (props) => {
       css={css({
         display: `block`,
         textTransform: `uppercase`,
-        letterSpacing: 1,
-        fontFamily: `body`,
-        color: `black`,
-        opacity: 0.8,
-        fontSize: [0],
-        mb: [2, 2, 3],
-        mt: [0],
-        [theme.mediaQueries.md]: {
-          color: `white`
-        }
+        variant: `portfolioCard.category`,
       })}
       {...props}
     >

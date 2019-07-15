@@ -19,9 +19,45 @@ for (let breakpoint in breakpoints) {
   mediaQueries[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]})`;
 }
 
+const portfolioCard = {
+  container: {
+    bg: [`white`, `white`, `white`, `black`]
+  },
+  title: {
+    fontWeight: `bold`,
+    fontFamily: `heading`,
+    fontSize: [2],
+    letterSpacing: 1,
+    color: [`black`, `black`, `black`, `white`],
+    mb: 4
+  },
+  textOverlay: {
+    background: `linear-gradient(
+      180deg,
+      rgba(29, 29, 29, 0) 3%,
+      rgb(29, 29, 29) 100%
+    )`
+  },
+  category: {
+    fontFamily: `body`,
+    color: [`black`, `black`, `white`],
+    letterSpacing: 1,
+    fontSize: [0],
+    opacity: 0.8,
+    mb: [2, 2, 3],
+    mt: [0]
+  },
+  description: {
+    color: `black`,
+    fontFamily: `body`,
+    lineHeight: 1.8
+  }
+};
+
 export default {
   ...base,
   mediaQueries,
   breakpoints,
   zIndices,
+  portfolioCard
 }

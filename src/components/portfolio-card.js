@@ -55,8 +55,8 @@ const PortfolioCard = (props) => {
         <div
           className="card"
           css={css({
-            px: [3, 3, 4],
-            py: [3, 4, 4],
+            px: 3,
+            py: 4,
             [theme.mediaQueries.md]: {
               display: `flex`,
               flexDirection: `column`,
@@ -67,16 +67,18 @@ const PortfolioCard = (props) => {
               height: `100%`,
               position: `absolute`,
               top: 0,
-              backgroundColor: `black`,
-              width: `100%`
-            }
+              width: `100%`,
+              px: 4,
+              py: 4
+            },
+            variant: `portfolioCard.container`
           })}
         >
           <div
             css={css({
               [theme.mediaQueries.md]: {
                 flex: 1,
-                overflow: `hidden`
+                overflow: `scroll`
               }
             })}
           >
@@ -95,12 +97,10 @@ const PortfolioCard = (props) => {
               position: relative;
             `}
           >
-            <PortfolioCardTextOverlay />
-            <PortfolioCardButton
-              tabIndex="-1"
-            >
+            <PortfolioCardButton tabIndex="-1">
               {buttonText}
             </PortfolioCardButton>
+            <PortfolioCardTextOverlay />
           </div>
         </div>
       </section>
