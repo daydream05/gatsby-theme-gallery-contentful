@@ -10,14 +10,14 @@ const PortfolioPage = ({ data, location }) => {
   let isModal = false
   // we can pass in a removeModal state to a Link
   // as an escape hatch.
-  const removeModal = location.state && location.state.removeModal
+  const openModal = location.state && location.state.openModal;
 
   if (
     typeof window !== `undefined` &&
     // from gatsby browser
     window.___GATSBYGRAM_INITIAL_RENDER_COMPLETE &&
     // from location state
-    !removeModal
+    openModal
   ) {
     isModal = true
   }

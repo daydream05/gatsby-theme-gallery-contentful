@@ -21,6 +21,7 @@ const PortfolioCard = (props) => {
     description,
     buttonText,
     linkTo,
+    linkState,
     isBehindAModal,
     ...rest
   } = props;
@@ -28,6 +29,7 @@ const PortfolioCard = (props) => {
   return (
     <Link
       to={linkTo}
+      state={linkState}
       title={`Read more about the "${title}" project`}
       css={css({
         textDecoration: `none`,
@@ -117,10 +119,14 @@ PortfolioCard.propTypes = {
   description: PropTypes.string,
   buttonText: PropTypes.string,
   linkTo: PropTypes.string.isRequired,
+  linkState: PropTypes.object,
 };
 
 PortfolioCard.defaultProps = {
   buttonText: `Learn more`,
-}
+  linkState: {
+    openModal: true
+  }
+};
 
 export default PortfolioCard

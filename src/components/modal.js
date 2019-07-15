@@ -54,7 +54,11 @@ const Modal = (props) => {
       } else {
         nextItem = portfolioList[currentIndex + 1]
       }
-      navigate(`${nextItem.fields.path}`);
+      navigate(`${nextItem.fields.path}`, {
+        state: {
+          openModal: true,
+        }
+      });
     }
   }
 
@@ -72,7 +76,11 @@ const Modal = (props) => {
       } else {
         prevItem = portfolioList[currentIndex - 1]
       }
-      navigate(`${prevItem.fields.path}`);
+      navigate(`${prevItem.fields.path}`, {
+        state: {
+          openModal: true
+        }
+      });
     }
   }
 
