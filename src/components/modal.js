@@ -100,10 +100,10 @@ const Modal = (props) => {
     >
       <DialogContent>
         <div ref={initialFocus} tabIndex="-1" />
-        <CloseButton onClick={dismiss} />
         {children}
         <RightArrow onClick={next} />
         <LeftArrow onClick={previous} />
+        <CloseButton onClick={dismiss} />
       </DialogContent>
     </DialogOverlay>
   );
