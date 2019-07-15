@@ -17,6 +17,7 @@ const PortfolioPageHeader = (props) => {
     <header
       css={css({
         display: `block`,
+        mb: [4, 4, 4, 5],
         [theme.mediaQueries.md]: {
           display: `grid`,
           gridTemplateColumns: `1fr 1fr`
@@ -41,10 +42,7 @@ const PortfolioPageHeader = (props) => {
           {description}
         </PortfolioPageDescription>
       )}
-      <PortfolioPageShareMenu
-        url={pageUrl}
-        media={media.file.url}
-      />
+      <PortfolioPageShareMenu url={pageUrl} media={media.file.url} />
     </header>
   );
 }
