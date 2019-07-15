@@ -14,7 +14,7 @@ const gridItemWidth = [
   `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
   `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
   `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/5 - ${theme.space[3]}px)`,
+  `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
   `calc(99.99% * 1/6 - ${theme.space[3]}px)`
 ]
 
