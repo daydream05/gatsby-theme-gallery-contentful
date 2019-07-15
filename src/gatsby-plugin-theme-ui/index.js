@@ -21,12 +21,13 @@ for (let breakpoint in breakpoints) {
 
 const portfolioCard = {
   container: {
-    bg: [`white`, `white`, `white`, `black`]
+    bg: [`white`, `white`, `white`, `black`],
+    p: [3, 3, 3, 4]
   },
   title: {
     fontWeight: `bold`,
     fontFamily: `heading`,
-    fontSize: [2],
+    fontSize: [3,3,3,2],
     letterSpacing: 1,
     color: [`black`, `black`, `black`, `white`],
     mb: 4
@@ -40,7 +41,7 @@ const portfolioCard = {
   },
   category: {
     fontFamily: `body`,
-    color: [`black`, `black`, `white`],
+    color: [`black`, `black`, `black`, `white`],
     letterSpacing: 1,
     fontSize: [0],
     opacity: 0.8,
@@ -48,9 +49,12 @@ const portfolioCard = {
     mt: [0]
   },
   description: {
-    color: `black`,
+    color: [`black`,`black`,`black`,`white`],
     fontFamily: `body`,
-    lineHeight: 1.8
+    lineHeight: 1.8,
+    fontSize: [2, 2, 1],
+    mb: [4, 4, 4, 0],
+    letterSpacing: 1
   }
 };
 

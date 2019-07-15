@@ -38,7 +38,7 @@ const GalleryPageMasonry = ({ data, isBehindAModal, ...rest }) => {
             ]
           },
           ".grid-item": {
-            marginBottom: [3, 4, 3],
+            marginBottom: [5, 5, 5, 3],
             mx: [2, 2, 2],
             width: [
               `calc(99.99% * 1/1 - ${theme.space[3]}px)`,

@@ -78,7 +78,7 @@ const PortfolioCard = (props) => {
             css={css({
               [theme.mediaQueries.md]: {
                 flex: 1,
-                overflow: `scroll`
+                overflow: `hidden`
               }
             })}
           >
