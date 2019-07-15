@@ -5,8 +5,8 @@ const PortfolioPageTitle = (props) => {
   return (
     <Styled.h1
       css={css({
-        fontSize: 4,
-        mb: 4,
+        fontSize: [4,4,4,5],
+        mb: 3,
         ":first-letter": {
           textTransform: `capitalize`
         }
