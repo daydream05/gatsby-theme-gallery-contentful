@@ -18,7 +18,7 @@ const gridItemWidth = [
   `calc(99.99% * 1/6 - ${theme.space[3]}px)`
 ]
 
-const GalleryPageMasonry = ({ data, isBehindAModal, gutter, ...rest }) => {
+const GalleryPageMasonry = ({ itemList, isBehindAModal, gutter, ...rest }) => {
 
   const masonryOptions = {
     itemSelector: ".grid-item",
@@ -55,18 +55,18 @@ const GalleryPageMasonry = ({ data, isBehindAModal, gutter, ...rest }) => {
         {...rest}
       >
         <div className="grid-sizer" />
-        {data.allContentfulPortfolio.edges.map(({ node }, index) => {
+        {itemList && itemList.map((item, index) => {
           return (
             <PortfolioCard
               isBehindAModal={isBehindAModal}
-              key={`${node.id}-${index}`}
+              key={`${item.id}-${index}`}
               className={`grid-item`}
-              title={node.title}
-              media={node.media}
-              category={node.category}
-              linkTo={node.fields.path}
+              title={item.title}
+              media={item.media}
+              category={item.category}
+              linkTo={item.fields.path}
               description={
-                node.description && node.description.internal.content
+                item.description && item.description.internal.content
               }
             />
           );
@@ -77,7 +77,18 @@ const GalleryPageMasonry = ({ data, isBehindAModal, gutter, ...rest }) => {
 };
 
 GalleryPageMasonry.propTypes = {
-  data: PropTypes.object.isRequired,
+  itemList: PropTypes.shape({
+    title: PropTypes.string,
+    media: PropTypes.object,
+    category: PropTypes.string,
+    linkTo: PropTypes.shape({
+      fields: PropTypes.shape({
+        path: PropTypes.string
+      })
+    }),
+    linkState: PropTypes.object,
+    description: PropTypes.object,
+  }).isRequired,
   isBehindAModal: PropTypes.bool,
   gutter: PropTypes.number,
 };
