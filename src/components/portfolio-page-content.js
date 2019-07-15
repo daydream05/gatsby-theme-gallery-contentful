@@ -15,7 +15,7 @@ const PortfolioPageContent = ({ data }) => {
         <PortfolioPageHeader
           title={title}
           category={category}
-          description={description.internal.content}
+          description={description && description.internal.content}
         />
         <PortfolioPagedMedia media={media} />
       </PortfolioPageContainer>

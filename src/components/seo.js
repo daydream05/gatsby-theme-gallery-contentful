@@ -35,8 +35,6 @@ const SEO = ({
 }) => {
   const { site } = useStaticQuery(siteQuery)
 
-  const metaDescription = description
-
   const { siteUrl, siteName } = site.siteMetadata
 
   return (
