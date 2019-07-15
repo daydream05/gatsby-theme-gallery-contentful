@@ -7,8 +7,11 @@ import PortfolioPageHeader from './portfolio-page-header'
 import PortfolioPagedMedia from "./portfolio-page-media";
 
 
-const PortfolioPageContent = ({ data }) => {
-  const { title, media, category, description } = data.contentfulPortfolio
+const PortfolioPageContent = (props) => {
+  const { title, media, category, description } = props.data.contentfulPortfolio
+
+  console.log(props.pageUrl);
+
   return (
     <article>
       <PortfolioPageContainer>
@@ -16,6 +19,8 @@ const PortfolioPageContent = ({ data }) => {
           title={title}
           category={category}
           description={description && description.internal.content}
+          media={media}
+          pageUrl={props.pageUrl}
         />
         <PortfolioPagedMedia media={media} />
       </PortfolioPageContainer>
@@ -25,7 +30,8 @@ const PortfolioPageContent = ({ data }) => {
 
 PortfolioPageContent.propTypes = {
   // specify later
-  data: PropTypes.object
+  data: PropTypes.object,
+  pageUrl: PropTypes.string,
 };
 
 export default PortfolioPageContent

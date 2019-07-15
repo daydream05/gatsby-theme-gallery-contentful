@@ -36,7 +36,10 @@ const PortfolioPage = ({ data, location }) => {
         imageHeight={!isVideo && shareImage ? shareImage.resize.height : null}
         video={isVideo && media ? media.file.url : null}
       />
-      <PortfolioPageContent data={data} />
+      <PortfolioPageContent
+        data={data}
+        pageUrl={location.href}
+      />
     </Layout>
   );
 }

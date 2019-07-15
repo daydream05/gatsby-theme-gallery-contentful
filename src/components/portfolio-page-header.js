@@ -8,9 +8,11 @@ import theme from '../gatsby-plugin-theme-ui'
 import PortfolioPageTitle from './portfolio-page-title'
 import PortfolioPageCategory from "./portfolio-page-category";
 import PortfolioPageDescription from './portfolio-page-description';
+import PortfolioPageShareMenu from './portfolio-page-share-menu'
 
 const PortfolioPageHeader = (props) => {
-  const { title, category, description, ...rest } = props
+  const { title, category, description, pageUrl, media, ...rest } = props
+  
   return (
     <header
       css={css({
@@ -39,6 +41,10 @@ const PortfolioPageHeader = (props) => {
           {description}
         </PortfolioPageDescription>
       )}
+      <PortfolioPageShareMenu
+        url={pageUrl}
+        media={media.file.url}
+      />
     </header>
   );
 }
