@@ -5,6 +5,9 @@ import { css } from "theme-ui"
 const RightArrow = props => {
   return (
     <div
+      role="button"
+      tabindex="0"
+      aria-label="Next page"
       css={css({
         position: `fixed`,
         top: `50%`,
