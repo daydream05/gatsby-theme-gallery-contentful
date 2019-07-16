@@ -6,7 +6,8 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "format": "prettier --write src/**/*.{js,jsx}"
   },
   "dependencies": {
     "@emotion/core": "^10.0.14",
@@ -33,7 +34,10 @@
     "theme-ui": "^0.2.10"
   },
   "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-gatsby-standard": "^2.2.0",
     "gatsby": "^2.13.10",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }
