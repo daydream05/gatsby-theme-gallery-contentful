@@ -6,8 +6,8 @@ import GalleryPageHeader from "./gallery-page-header"
 import GalleryPageMasonry from './gallery-page-masonry'
 
 const GalleryPageContent = ({ data, isBehindAModal }) => {
-  const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node);
-
+  const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node)
+  
   return (
     <div
       css={css({
@@ -16,7 +16,7 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
     >
       <GalleryPageHeader
         title={data.site.siteMetadata.baseTitle}
-        subTitle={data.site.siteMetadata.subTitle}
+        subTitle={data.site.siteMetadata.baseSubtitle}
       />
       <GalleryPageMasonry
         itemList={portfolioList}

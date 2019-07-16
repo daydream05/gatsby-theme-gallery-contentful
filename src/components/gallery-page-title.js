@@ -6,12 +6,11 @@ const GalleryPageTitle = (props) => {
   return (
     <Styled.h1
       css={css({
-        pl: 1,
         mt: 0,
         mb: [0],
         color: `text`,
         fontSize: [7],
-        lineHeight: `body`
+        lineHeight: `body`,
       })}
       {...props}
     >
