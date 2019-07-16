@@ -12,7 +12,7 @@ const GalleryPageHeader = (props) => {
   return (
     <header
       css={css({
-        mx: [2, 2, 3, 4, 4, `auto`],
+        mx: [3, 3, 3, 4, 4, `auto`],
         maxWidth: [
           `unset`,
           `unset`,
@@ -20,7 +20,9 @@ const GalleryPageHeader = (props) => {
           `unset`,
           `unset`,
           theme.breakpoints.xl
-        ]
+        ],
+        mb: [2, 2, 2, 4, 5],
+        variant: `galleryPage.header`,
       })}
       {...rest}
     >

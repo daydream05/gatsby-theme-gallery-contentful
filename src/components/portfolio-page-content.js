@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { css } from 'theme-ui'
+
 import PortfolioPageContainer from './portfolio-page-container';
 
 import PortfolioPageHeader from './portfolio-page-header'
@@ -11,7 +13,11 @@ const PortfolioPageContent = (props) => {
   const { title, media, category, description } = props.data.contentfulPortfolio
 
   return (
-    <article>
+    <article
+      css={css({
+        backgroundColor: `background`
+      })}
+    >
       <PortfolioPageContainer>
         <PortfolioPageHeader
           title={title}

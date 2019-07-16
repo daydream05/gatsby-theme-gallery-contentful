@@ -1,4 +1,5 @@
 import { funk } from '@theme-ui/presets'
+import { merge } from 'lodash'
 
 const breakpoints = [`320px`, `550px`, `750px`, `1000px`, `1200px`, `1600px`, `2800px`];
 
@@ -27,9 +28,13 @@ const letterSpacings = {
   widest: "0.1em"
 }
 
+const colors = {
+  white: `#fff`,
+}
+
 const portfolioCard = {
   container: {
-    bg: [`muted`, `muted`, `muted`, `text`],
+    bg: [`unset`, `unset`, `unset`, `text`],
     px: [3, 3, 3, 4, 4],
     py: [3, 4, 4, 4, 4]
   },
@@ -39,7 +44,8 @@ const portfolioCard = {
     fontSize: [3, 3, 3, 3],
     letterSpacing: 1,
     color: [`text`, `text`, `text`, `muted`],
-    mb: 4
+    mb: 4,
+    mt: 0,
   },
   textOverlay: {
     background: `linear-gradient(
@@ -54,7 +60,6 @@ const portfolioCard = {
     letterSpacing: `widest`,
     fontSize: [0],
     opacity: 0.8,
-    mb: [2, 2, 3],
     mt: [0]
   },
   description: {
@@ -75,14 +80,19 @@ const masonry = {
   gridSizer: {}
 };
 
-console.log(funk)
+const baseTheme = merge(
+  funk,
+  {
+    mediaQueries,
+    breakpoints,
+    letterSpacings,
+    zIndices,
+    portfolioCard,
+    masonry,
+    colors
+  }
+)
 
-export default {
-  ...funk,
-  mediaQueries,
-  breakpoints,
-  letterSpacings,
-  zIndices,
-  portfolioCard,
-  masonry,
-}
+console.log(baseTheme)
+
+export default baseTheme

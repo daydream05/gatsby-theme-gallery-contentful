@@ -14,6 +14,7 @@ const GalleryPageSubtitle = (props) => {
         lineHeight: `heading`,
         width: [`100%`,`100%`,`100%`,`50%`],
         letterSpacing: `widest`,
+        variant: `galleryPage.subtitle`,
       })}
     >{children}</Styled.h5>
   )

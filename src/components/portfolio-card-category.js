@@ -9,6 +9,7 @@ const PortfolioCardCategory = (props) => {
         display: `block`,
         textTransform: `uppercase`,
         variant: `portfolioCard.category`,
+        mb: 3,
       })}
       {...props}
     >

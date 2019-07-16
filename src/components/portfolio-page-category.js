@@ -13,7 +13,7 @@ const PortfolioPageCategory = (props) => {
         color: `text`,
         opacity: 0.8,
         fontSize: [0, 0, 1],
-        mb: 4
+        mb: [4]
       })}
       {...props}
     >{props.children}</span>

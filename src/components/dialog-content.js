@@ -14,12 +14,13 @@ const CustomDialogContent = (props) => {
         width: `100%`,
         maxWidth: theme.breakpoints.lg,
         mx: `auto`,
+        variant: `dialog.content`
       })}
       {...props}
     >
       {props.children}
     </DialogContent>
-  )
+  );
 }
 
 export default CustomDialogContent
