@@ -5,27 +5,29 @@ import { css } from 'theme-ui'
 
 import PortfolioCard from "./portfolio-card"
 
-import tokens from '../utils/tokens'
+import space from '../gatsby-plugin-theme-ui/space'
 
-console.log(tokens.space)
+
+// TODO: This breaks when space is not in the power of 2
 
 const gridItemWidth = [
-  `calc(99.99% * 1/1 - ${tokens.space[3]}px)`,
-  `calc(99.99% * 1/1 - ${tokens.space[3]}px)`,
-  `calc(99.99% * 1/1 - ${tokens.space[3]}px)`,
-  `calc(99.99% * 1/3 - ${tokens.space[3]}px)`,
-  `calc(99.99% * 1/3 - ${tokens.space[3]}px)`,
-  `calc(99.99% * 1/4 - ${tokens.space[3]}px)`,
-  `calc(99.99% * 1/4 - ${tokens.space[3]}px)`,
-  `calc(99.99% * 1/6 - ${tokens.space[3]}px)`
+  `calc(99.99% * 1/1 - ${space[3]}px)`,
+  `calc(99.99% * 1/1 - ${space[3]}px)`,
+  `calc(99.99% * 1/1 - ${space[3]}px)`,
+  `calc(99.99% * 1/3 - ${space[3]}px)`,
+  `calc(99.99% * 1/3 - ${space[3]}px)`,
+  `calc(99.99% * 1/4 - ${space[3]}px)`,
+  `calc(99.99% * 1/4 - ${space[3]}px)`,
+  `calc(99.99% * 1/6 - ${space[3]}px)`
 ]
+
 
 const GalleryPageMasonry = ({ itemList, isBehindAModal, gutter, ...rest }) => {
 
   const masonryOptions = {
     itemSelector: ".grid-item",
     columnWidth: `.grid-sizer`,
-    gutter: tokens.space[3],
+    gutter: space[3],
   }
 
   return (
@@ -98,7 +100,7 @@ GalleryPageMasonry.propTypes = {
 };
 
 GalleryPageMasonry.defaultProps = {
-  gutter: tokens.space[3],
+  gutter: space[3],
 }
 
 export default GalleryPageMasonry

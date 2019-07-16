@@ -9,10 +9,12 @@ import portfolioCard from './portfolio-card'
 import masonry from './masonry'
 import colors from './colors'
 import galleryPage from './gallery-page'
+import space from './space'
 
 const baseTheme = merge(
   funk,
   {
+    space,
     mediaQueries,
     breakpoints,
     letterSpacings,
