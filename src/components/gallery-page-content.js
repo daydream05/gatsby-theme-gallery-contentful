@@ -7,11 +7,12 @@ import GalleryPageMasonry from './gallery-page-masonry'
 
 const GalleryPageContent = ({ data, isBehindAModal }) => {
   const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node)
-  
+
   return (
     <div
       css={css({
-        pt: [4]
+        py: [5],
+        variant: `galleryPage.content`
       })}
     >
       <GalleryPageHeader

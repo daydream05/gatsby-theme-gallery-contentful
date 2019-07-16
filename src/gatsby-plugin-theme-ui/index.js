@@ -80,6 +80,12 @@ const masonry = {
   gridSizer: {}
 };
 
+const galleryPage = {
+  content: {
+    py: [5]
+  }
+}
+
 const baseTheme = merge(
   funk,
   {
@@ -89,7 +95,8 @@ const baseTheme = merge(
     zIndices,
     portfolioCard,
     masonry,
-    colors
+    colors,
+    galleryPage
   }
 )
 
