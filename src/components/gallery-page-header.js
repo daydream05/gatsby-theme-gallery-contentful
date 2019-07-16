@@ -15,11 +15,7 @@ const GalleryPageHeader = (props) => {
       {...props}
     >
       <GalleryPageTitle>{title}</GalleryPageTitle>
-      <GalleryPageSubtitle>
-        There are no previous versions because you haven't made changes to
-        this entry yet. As soon as you publish changes, you'll be able to
-        compare different versions.
-      </GalleryPageSubtitle>
+      <GalleryPageSubtitle>{subTitle}</GalleryPageSubtitle>
     </header>
   );
 }
