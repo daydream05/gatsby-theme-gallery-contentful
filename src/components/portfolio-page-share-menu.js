@@ -45,7 +45,8 @@ const PortfolioPageShareMenu = (props) => {
           padding: 0,
           cursor: `pointer`,
           zIndex: 1,
-          ...linkStyle
+          ...linkStyle,
+          variant: `buttons.shareMenu`,
         })}
       >
         <MdShare />
@@ -127,7 +128,7 @@ const PortfolioPageShareMenu = (props) => {
 export default PortfolioPageShareMenu
 
 
-const border = `2px solid rgba(0,0,0,.3)`;
+const border = `2px solid text`;
 
 const linkStyle = {
   color: `text`,
