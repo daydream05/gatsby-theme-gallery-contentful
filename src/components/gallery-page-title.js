@@ -9,7 +9,7 @@ const GalleryPageTitle = (props) => {
         mt: 0,
         mb: [3],
         color: `text`,
-        fontSize: [7],
+        fontSize: [6,6,6,7],
         lineHeight: `1`,
         variant: `galleryPage.title`,
       })}
