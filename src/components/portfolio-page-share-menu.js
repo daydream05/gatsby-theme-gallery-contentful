@@ -128,7 +128,7 @@ const PortfolioPageShareMenu = (props) => {
 export default PortfolioPageShareMenu
 
 
-const border = `2px solid text`;
+const border = `2px solid`;
 
 const linkStyle = {
   color: `text`,
