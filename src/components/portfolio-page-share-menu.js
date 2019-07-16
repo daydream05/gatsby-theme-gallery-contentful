@@ -41,7 +41,7 @@ const PortfolioPageShareMenu = (props) => {
         onClick={() => setOpen(!open)}
         css={css({
           background: `unset`,
-          backgroundColor: `white`,
+          backgroundColor: `muted`,
           padding: 0,
           cursor: `pointer`,
           zIndex: 1,
@@ -130,7 +130,7 @@ export default PortfolioPageShareMenu
 const border = `2px solid rgba(0,0,0,.2)`;
 
 const linkStyle = {
-  color: `black`,
+  color: `text`,
   opacity: 1,
   fontSize: 3,
   width: `48px`,

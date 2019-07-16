@@ -21,7 +21,7 @@ const LeftArrow = (props) => {
       <FaLongArrowAltLeft
         css={css({
           fontSize: 4,
-          color: `black`,
+          color: `text`,
           cursor: `pointer`,
           translateY: `-50%`
         })}

@@ -12,8 +12,8 @@ const GalleryPageHeading = (props) => {
         mx: [2,2,3,4,4,6],
         pl: 1,
         mb: [4, 4, 4],
-        color: `black`,
-        fontSize: [6],
+        color: `text`,
+        fontSize: [7,7,7,8],
         [theme.mediaQueries.xxxl]: {
           maxWidth: theme.breakpoints.xxxl,
           mb: 5,

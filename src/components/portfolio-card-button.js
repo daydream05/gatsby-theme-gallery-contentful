@@ -13,7 +13,7 @@ const PortfolioCardButton = (props) => {
         alignItems: `center`,
         alignSelf: `flex-start`,
         backgroundColor: `unset`,
-        color: `black`,
+        color: `text`,
         fontSize: [1],
         textTransform: `uppercase`,
         py: 3,
@@ -24,17 +24,17 @@ const PortfolioCardButton = (props) => {
         transition: `0.3s`,
         mt: [0, 0, 1],
         ":hover, :focus": {
-          backgroundColor: `white`,
+          backgroundColor: `muted`,
           transition: `0.3s`,
-          color: `black`
+          color: `text`
         },
         [theme.mediaQueries.md]: {
-          color: `white`,
-          border: `2px solid white`,
+          color: `muted`,
+          border: `2px solid muted`,
           backgroundColor: `unset`,
           ":hover, :focus": {
-            color: `black`,
-            backgroundColor: `white`
+            color: `text`,
+            backgroundColor: `muted`
           }
         },
         variant: "buttons.secondary"

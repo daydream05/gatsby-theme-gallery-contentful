@@ -21,7 +21,7 @@ const RightArrow = props => {
       <FaLongArrowAltRight
         css={css({
           fontSize: 4,
-          color: `black`,
+          color: `text`,
           cursor: `pointer`,
           translteY: `-50%`
         })}

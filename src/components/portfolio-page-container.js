@@ -9,7 +9,7 @@ const PortfolioPageContainer = (props) => {
       css={css({
         boxSizing: `border-box`,
         width: `100%`,
-        backgroundColor: `white`,
+        backgroundColor: `muted`,
         margin: `auto`,
         maxWidth: theme.breakpoints.xl,
         py: [4,4,4,5],

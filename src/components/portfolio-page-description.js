@@ -6,7 +6,7 @@ const PortfolioPageDescription = (props) => {
     <Styled.p
       css={css({
         fontFamily: 'body',
-        color: `black`,
+        color: `text`,
         mb: [0],
       })}
       {...props}

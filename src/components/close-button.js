@@ -12,7 +12,7 @@ const CloseButton = (props) => {
         padding: 0,
         border: `none`,
         display: `block`,
-        color: `black`,
+        color: `text`,
         fontSize: 6,
         fontFamily: `body`,
         position: `fixed`,
@@ -42,7 +42,7 @@ const CloseButton = (props) => {
           css={css({
             width: 8,
             height: 48,
-            backgroundColor: `black`,
+            backgroundColor: `text`,
             margin: `auto`
           })}
         />
@@ -50,7 +50,7 @@ const CloseButton = (props) => {
           css={css({
             width: 48,
             height: 8,
-            backgroundColor: `black`,
+            backgroundColor: `text`,
             top: `50%`,
             margin: `auto`,
             transform: `translateY(-50%)`,
