@@ -1,80 +1,80 @@
-import React, { useState, useEffect, useRef } from 'react'
-import PropTypes from 'prop-types'
-import { navigate, useStaticQuery, graphql } from 'gatsby'
-import findIndex from "lodash/findIndex"
-import mousetrap from "mousetrap"
+import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import { navigate, useStaticQuery, graphql } from "gatsby";
+import findIndex from "lodash/findIndex";
+import mousetrap from "mousetrap";
 
-import "@reach/dialog/styles.css"
+import "@reach/dialog/styles.css";
 
-import RightArrow from './right-arrow'
-import LeftArrow from './left-arrow';
-import CloseButton from './close-button'
-import DialogOverlay from './dialog-overlay'
-import DialogContent from './dialog-content'
+import RightArrow from "./right-arrow";
+import LeftArrow from "./left-arrow";
+import CloseButton from "./close-button";
+import DialogOverlay from "./dialog-overlay";
+import DialogContent from "./dialog-content";
 
-const Modal = (props) => {
-  const { isOpen, location, children } = props
+const Modal = props => {
+  const { isOpen, location, children } = props;
 
-  const [showDialog, setShowDialog] = useState(isOpen)
-  const data = useStaticQuery(photoQuery)
-  const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node)
-  
+  const [showDialog, setShowDialog] = useState(isOpen);
+  const data = useStaticQuery(photoQuery);
+  const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node);
+
   useEffect(() => {
-    mousetrap.bind(`left`, next)
-    mousetrap.bind(`right`, previous)
-    mousetrap.bind(`escape`, dismiss)
+    mousetrap.bind(`left`, next);
+    mousetrap.bind(`right`, previous);
+    mousetrap.bind(`escape`, dismiss);
 
     return () => {
-      mousetrap.unbind(`left`)
-      mousetrap.unbind(`right`)
-      mousetrap.unbind(`escape`)
-    }
-  }, [`left`, `right`, `space`, `escape`])
+      mousetrap.unbind(`left`);
+      mousetrap.unbind(`right`);
+      mousetrap.unbind(`escape`);
+    };
+  }, [`left`, `right`, `space`, `escape`]);
 
   const findCurrentIndex = () => {
-    let index
+    let index;
     index = findIndex(
       portfolioList,
-      (portfolio) => portfolio.fields.path === location.pathname
-    )
+      portfolio => portfolio.fields.path === location.pathname
+    );
 
-    return index
-  }
+    return index;
+  };
 
-  const next = (e) => {
-    if(e) {
-      e.stopPropagation()
+  const next = e => {
+    if (e) {
+      e.stopPropagation();
     }
-    const currentIndex = findCurrentIndex()
-    if( currentIndex || currentIndex === 0) {
-      let nextItem
+    const currentIndex = findCurrentIndex();
+    if (currentIndex || currentIndex === 0) {
+      let nextItem;
       // wrap around if at end
       if (currentIndex + 1 === portfolioList.length) {
-        nextItem = portfolioList[0]
+        nextItem = portfolioList[0];
       } else {
-        nextItem = portfolioList[currentIndex + 1]
+        nextItem = portfolioList[currentIndex + 1];
       }
       navigate(`${nextItem.fields.path}`, {
         state: {
-          openModal: true,
+          openModal: true
         }
       });
     }
-  }
+  };
 
-  const previous = (e) => {
-    if(e) {
-      e.stopPropagation()
+  const previous = e => {
+    if (e) {
+      e.stopPropagation();
     }
 
-    const currentIndex = findCurrentIndex()
+    const currentIndex = findCurrentIndex();
     if (currentIndex || currentIndex === 0) {
-      let prevItem
+      let prevItem;
       // wrap around if at start
       if (currentIndex === 0) {
         prevItem = portfolioList.slice(-1)[0];
       } else {
-        prevItem = portfolioList[currentIndex - 1]
+        prevItem = portfolioList[currentIndex - 1];
       }
       navigate(`${prevItem.fields.path}`, {
         state: {
@@ -82,12 +82,12 @@ const Modal = (props) => {
         }
       });
     }
-  }
+  };
 
   const dismiss = () => {
     setShowDialog(false);
     navigate(data.site.siteMetadata.basePath);
-  }
+  };
 
   // we use this to hide initial focus
   const initialFocus = useRef(null);
@@ -107,13 +107,13 @@ const Modal = (props) => {
       </DialogContent>
     </DialogOverlay>
   );
-}
+};
 
 Modal.propTypes = {
   isOpen: PropTypes.bool,
   location: PropTypes.object.isRequired,
-  children: PropTypes.node,
-}
+  children: PropTypes.node
+};
 
 const photoQuery = graphql`
   query {
@@ -132,6 +132,6 @@ const photoQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Modal
+export default Modal;

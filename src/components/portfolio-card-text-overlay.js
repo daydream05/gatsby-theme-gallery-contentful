@@ -1,7 +1,7 @@
-import React from 'react'
-import { css } from 'theme-ui'
+import React from "react";
+import { css } from "theme-ui";
 
-const PortfolioCardTextOverlay = (props) => {
+const PortfolioCardTextOverlay = props => {
   return (
     <div
       css={css({
@@ -12,11 +12,11 @@ const PortfolioCardTextOverlay = (props) => {
         transform: `translateY(calc(-100% + 2px))`,
         width: `100%`,
         height: `100%`,
-        variant: `portfolioCard.textOverlay`,
+        variant: `portfolioCard.textOverlay`
       })}
       {...props}
     />
   );
-}
+};
 
-export default PortfolioCardTextOverlay
+export default PortfolioCardTextOverlay;

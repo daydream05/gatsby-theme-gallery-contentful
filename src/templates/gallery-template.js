@@ -1,8 +1,8 @@
-import { graphql } from 'gatsby'
+import { graphql } from "gatsby";
 
-import GalleryPage from '../components/gallery-page'
+import GalleryPage from "../components/gallery-page";
 
-export default GalleryPage
+export default GalleryPage;
 
 export const galleryQuery = graphql`
   query {
@@ -39,4 +39,4 @@ export const galleryQuery = graphql`
       }
     }
   }
-`
+`;

@@ -35,4 +35,4 @@ const portfolioCard = {
   }
 };
 
-export default portfolioCard
+export default portfolioCard;

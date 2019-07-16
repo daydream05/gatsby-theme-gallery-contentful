@@ -1,10 +1,10 @@
-import React from 'react'
-import { css } from 'theme-ui'
+import React from "react";
+import { css } from "theme-ui";
 
 // I had a hard time resetting the button css T.T
 // so i just used aria role and tabindex
 
-const CloseButton = (props) => {
+const CloseButton = props => {
   return (
     <button
       css={css({
@@ -35,7 +35,7 @@ const CloseButton = (props) => {
     >
       <div
         css={css({
-          position: `relative`,
+          position: `relative`
         })}
       >
         <div
@@ -60,6 +60,6 @@ const CloseButton = (props) => {
       </div>
     </button>
   );
-}
+};
 
-export default CloseButton
+export default CloseButton;

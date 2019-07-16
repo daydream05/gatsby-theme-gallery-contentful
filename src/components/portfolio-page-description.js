@@ -1,19 +1,19 @@
-import React from 'react'
-import { Styled, css } from 'theme-ui'
+import React from "react";
+import { Styled, css } from "theme-ui";
 
-const PortfolioPageDescription = (props) => {
+const PortfolioPageDescription = props => {
   return (
     <Styled.p
       css={css({
-        fontFamily: 'body',
+        fontFamily: "body",
         color: `text`,
-        mb: [0],
+        mb: [0]
       })}
       {...props}
     >
       {props.children}
     </Styled.p>
-  )
-}
+  );
+};
 
-export default PortfolioPageDescription
+export default PortfolioPageDescription;

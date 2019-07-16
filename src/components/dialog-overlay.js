@@ -1,8 +1,8 @@
-import React from 'react'
-import { DialogOverlay } from '@reach/dialog'
-import { css } from 'theme-ui'
+import React from "react";
+import { DialogOverlay } from "@reach/dialog";
+import { css } from "theme-ui";
 
-const CustomDialogOverlay = (props) => {
+const CustomDialogOverlay = props => {
   return (
     <DialogOverlay
       css={css({
@@ -17,6 +17,6 @@ const CustomDialogOverlay = (props) => {
       {props.children}
     </DialogOverlay>
   );
-}
+};
 
-export default CustomDialogOverlay
+export default CustomDialogOverlay;

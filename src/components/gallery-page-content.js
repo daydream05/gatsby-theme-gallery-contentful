@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from 'prop-types'
-import { css } from "theme-ui"
+import React from "react";
+import PropTypes from "prop-types";
+import { css } from "theme-ui";
 
-import GalleryPageHeader from "./gallery-page-header"
-import GalleryPageMasonry from './gallery-page-masonry'
+import GalleryPageHeader from "./gallery-page-header";
+import GalleryPageMasonry from "./gallery-page-masonry";
 
 const GalleryPageContent = ({ data, isBehindAModal }) => {
-  const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node)
+  const portfolioList = data.allContentfulPortfolio.edges.map(e => e.node);
 
   return (
     <div
@@ -25,11 +25,11 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
       />
     </div>
   );
-}
+};
 
 GalleryPageContent.propTypes = {
   data: PropTypes.object.isRequired,
-  isBehindAModal: PropTypes.bool,
-}
+  isBehindAModal: PropTypes.bool
+};
 
 export default GalleryPageContent;

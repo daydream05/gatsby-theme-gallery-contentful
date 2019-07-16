@@ -1,7 +1,7 @@
-import React from 'react'
-import { css } from 'theme-ui'
+import React from "react";
+import { css } from "theme-ui";
 
-const PortfolioPageCategory = (props) => {
+const PortfolioPageCategory = props => {
   return (
     <span
       css={css({
@@ -16,8 +16,10 @@ const PortfolioPageCategory = (props) => {
         mb: [4]
       })}
       {...props}
-    >{props.children}</span>
-  )
-}
+    >
+      {props.children}
+    </span>
+  );
+};
 
-export default PortfolioPageCategory
+export default PortfolioPageCategory;

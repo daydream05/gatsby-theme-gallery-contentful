@@ -1,19 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import { css } from 'theme-ui'
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import { css } from "theme-ui";
 
-import theme from '../gatsby-plugin-theme-ui'
+import theme from "../gatsby-plugin-theme-ui";
 
-import PortfolioCardMedia from './portfolio-card-media'
-import PortfolioCardTitle from './portfolio-card-title'
-import PortfolioCardDescription from './portfolio-card-description'
-import PortfolioCardCategory from './portfolio-card-category'
-import PortfolioCardTextOverlay from './portfolio-card-text-overlay'
-import PortfolioCardButton from './portfolio-card-button'
+import PortfolioCardMedia from "./portfolio-card-media";
+import PortfolioCardTitle from "./portfolio-card-title";
+import PortfolioCardDescription from "./portfolio-card-description";
+import PortfolioCardCategory from "./portfolio-card-category";
+import PortfolioCardTextOverlay from "./portfolio-card-text-overlay";
+import PortfolioCardButton from "./portfolio-card-button";
 
-
-const PortfolioCard = (props) => {
+const PortfolioCard = props => {
   const {
     title,
     media,
@@ -25,7 +24,7 @@ const PortfolioCard = (props) => {
     isBehindAModal,
     ...rest
   } = props;
-  
+
   return (
     <Link
       to={linkTo}
@@ -70,7 +69,7 @@ const PortfolioCard = (props) => {
               top: 0,
               width: `100%`,
               variant: `portfolioCard.container`
-            },
+            }
           })}
         >
           <div
@@ -86,9 +85,7 @@ const PortfolioCard = (props) => {
             )}
             <PortfolioCardTitle>{title}</PortfolioCardTitle>
             {description && (
-              <PortfolioCardDescription>
-                {description}
-              </PortfolioCardDescription>
+              <PortfolioCardDescription>{description}</PortfolioCardDescription>
             )}
           </div>
           <div
@@ -96,9 +93,7 @@ const PortfolioCard = (props) => {
               position: relative;
             `}
           >
-            <PortfolioCardButton
-              tabIndex="-1"
-            >
+            <PortfolioCardButton tabIndex="-1">
               {buttonText}
             </PortfolioCardButton>
             <PortfolioCardTextOverlay />
@@ -107,7 +102,7 @@ const PortfolioCard = (props) => {
       </section>
     </Link>
   );
-}
+};
 
 PortfolioCard.propTypes = {
   title: PropTypes.string.isRequired,
@@ -118,7 +113,7 @@ PortfolioCard.propTypes = {
   description: PropTypes.string,
   buttonText: PropTypes.string,
   linkTo: PropTypes.string.isRequired,
-  linkState: PropTypes.object,
+  linkState: PropTypes.object
 };
 
 PortfolioCard.defaultProps = {
@@ -128,4 +123,4 @@ PortfolioCard.defaultProps = {
   }
 };
 
-export default PortfolioCard
+export default PortfolioCard;

@@ -1,16 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-import { css } from 'theme-ui'
+import { css } from "theme-ui";
 
-import PortfolioPageContainer from './portfolio-page-container';
+import PortfolioPageContainer from "./portfolio-page-container";
 
-import PortfolioPageHeader from './portfolio-page-header'
+import PortfolioPageHeader from "./portfolio-page-header";
 import PortfolioPagedMedia from "./portfolio-page-media";
 
-
-const PortfolioPageContent = (props) => {
-  const { title, media, category, description } = props.data.contentfulPortfolio
+const PortfolioPageContent = props => {
+  const {
+    title,
+    media,
+    category,
+    description
+  } = props.data.contentfulPortfolio;
 
   return (
     <article
@@ -30,12 +34,12 @@ const PortfolioPageContent = (props) => {
       </PortfolioPageContainer>
     </article>
   );
-}
+};
 
 PortfolioPageContent.propTypes = {
   // specify later
   data: PropTypes.object,
-  pageUrl: PropTypes.string,
+  pageUrl: PropTypes.string
 };
 
-export default PortfolioPageContent
+export default PortfolioPageContent;

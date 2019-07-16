@@ -1,30 +1,30 @@
-import React from 'react'
-import { PageRenderer, useStaticQuery, graphql } from 'gatsby'
+import React from "react";
+import { PageRenderer, useStaticQuery, graphql } from "gatsby";
 
 // We dynamically import Modal
-let Modal
+let Modal;
 import(`../components/modal`).then(modal => {
   Modal = modal.default;
-})
+});
 
-let windowWidth
+let windowWidth;
 
-const Layout = (props) => {
-  const { location, isModal, children } = props
+const Layout = props => {
+  const { location, isModal, children } = props;
 
-  const data = useStaticQuery(siteQuery)
+  const data = useStaticQuery(siteQuery);
 
-  let shouldModal = false
+  let shouldModal = false;
 
   if (!windowWidth && typeof window !== `undefined`) {
-    windowWidth = window.innerWidth
+    windowWidth = window.innerWidth;
   }
 
   // only set modal if not on mobile and if the page
   if (isModal && windowWidth > 750) {
-    shouldModal = true
+    shouldModal = true;
   }
-  
+
   // render modal here
   // PageRenderer is what allows us to render a page behind the modal
   // We also a state `isBehindAModal` so we can use it to pause
@@ -46,12 +46,8 @@ const Layout = (props) => {
   }
 
   // regular layout
-  return (
-    <React.Fragment>
-      {children}
-    </React.Fragment>
-  )
-}
+  return <React.Fragment>{children}</React.Fragment>;
+};
 
 export const siteQuery = graphql`
   query {
@@ -61,6 +57,6 @@ export const siteQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Layout
+export default Layout;

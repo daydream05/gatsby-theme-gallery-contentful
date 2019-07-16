@@ -16,4 +16,4 @@ breakpoints.xl = breakpoints[4];
 breakpoints.xxl = breakpoints[5];
 breakpoints.xxxl = breakpoints[6];
 
-export default breakpoints
+export default breakpoints;

@@ -1,10 +1,9 @@
-import React from 'react'
-import { css } from 'theme-ui'
+import React from "react";
+import { css } from "theme-ui";
 
-import theme from "../gatsby-plugin-theme-ui"
+import theme from "../gatsby-plugin-theme-ui";
 
-
-const PortfolioCardButton = (props) => {
+const PortfolioCardButton = props => {
   return (
     <button
       css={css({
@@ -44,6 +43,6 @@ const PortfolioCardButton = (props) => {
       {props.children}
     </button>
   );
-}
+};
 
-export default PortfolioCardButton
+export default PortfolioCardButton;

@@ -1,14 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 import { css } from "theme-ui";
 
-import theme from '../gatsby-plugin-theme-ui'
+import theme from "../gatsby-plugin-theme-ui";
 
-import GalleryPageTitle from './gallery-page-title'
-import GalleryPageSubtitle from './gallery-page-subtitle'
+import GalleryPageTitle from "./gallery-page-title";
+import GalleryPageSubtitle from "./gallery-page-subtitle";
 
-const GalleryPageHeader = (props) => {
-  const { title, subTitle, ...rest } = props
+const GalleryPageHeader = props => {
+  const { title, subTitle, ...rest } = props;
   return (
     <header
       css={css({
@@ -22,7 +22,7 @@ const GalleryPageHeader = (props) => {
           theme.breakpoints.xl
         ],
         mb: [2, 2, 2, 4, 5],
-        variant: `galleryPage.header`,
+        variant: `galleryPage.header`
       })}
       {...rest}
     >
@@ -30,11 +30,11 @@ const GalleryPageHeader = (props) => {
       <GalleryPageSubtitle>{subTitle}</GalleryPageSubtitle>
     </header>
   );
-}
+};
 
 GalleryPageHeader.propTypes = {
   title: PropTypes.string,
-  description: PropTypes.string,
-}
+  description: PropTypes.string
+};
 
-export default GalleryPageHeader
+export default GalleryPageHeader;

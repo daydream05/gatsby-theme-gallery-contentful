@@ -1,6 +1,6 @@
-import React from 'react'
-import { FaLongArrowAltRight } from 'react-icons/fa'
-import { css } from "theme-ui"
+import React from "react";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { css } from "theme-ui";
 
 const RightArrow = props => {
   return (
@@ -30,4 +30,4 @@ const RightArrow = props => {
   );
 };
 
-export default RightArrow
+export default RightArrow;

@@ -1,13 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-import Layout from './layout'
-import SEO from './seo'
-import PortfolioPageContent from './portfolio-page-content'
-
+import Layout from "./layout";
+import SEO from "./seo";
+import PortfolioPageContent from "./portfolio-page-content";
 
 const PortfolioPage = ({ data, location }) => {
-  let isModal = false
+  let isModal = false;
   // we can pass in a removeModal state to a Link
   // as an escape hatch.
   const openModal = location.state && location.state.openModal;
@@ -19,12 +18,12 @@ const PortfolioPage = ({ data, location }) => {
     // from location state
     openModal
   ) {
-    isModal = true
+    isModal = true;
   }
 
-  const { title, description, shareImage, media } = data.contentfulPortfolio
+  const { title, description, shareImage, media } = data.contentfulPortfolio;
 
-  const isVideo = media.file.contentType === `video/mp4`
+  const isVideo = media.file.contentType === `video/mp4`;
 
   return (
     <Layout location={location} isModal={isModal}>
@@ -36,17 +35,14 @@ const PortfolioPage = ({ data, location }) => {
         imageHeight={!isVideo && shareImage ? shareImage.resize.height : null}
         video={isVideo && media ? media.file.url : null}
       />
-      <PortfolioPageContent
-        data={data}
-        pageUrl={location.href}
-      />
+      <PortfolioPageContent data={data} pageUrl={location.href} />
     </Layout>
   );
-}
+};
 
 PortfolioPage.propTypes = {
   data: PropTypes.object,
   location: PropTypes.object.isRequired
 };
 
-export default PortfolioPage
+export default PortfolioPage;

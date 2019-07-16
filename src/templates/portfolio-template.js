@@ -1,11 +1,11 @@
-import { graphql } from 'gatsby'
-import PortfolioPage from '../components/portfolio-page'
+import { graphql } from "gatsby";
+import PortfolioPage from "../components/portfolio-page";
 
-export default PortfolioPage
+export default PortfolioPage;
 
 export const portfolioTemplateQuery = graphql`
   query($slug: String!) {
-    contentfulPortfolio(fields: { slug: { eq: $slug }}) {
+    contentfulPortfolio(fields: { slug: { eq: $slug } }) {
       title
       category
       description {

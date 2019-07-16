@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { FaPinterest, FaFacebookF, FaTwitter } from 'react-icons/fa'
-import { MdShare } from 'react-icons/md'
-import { css } from 'theme-ui'
+import React, { useState } from "react";
+import { FaPinterest, FaFacebookF, FaTwitter } from "react-icons/fa";
+import { MdShare } from "react-icons/md";
+import { css } from "theme-ui";
 
-import theme from '../gatsby-plugin-theme-ui'
+import theme from "../gatsby-plugin-theme-ui";
 
 // stolen from gatsbyjs :)
 
@@ -17,13 +17,12 @@ const objectToParams = object =>
   Object.keys(object)
     .filter(key => !!object[key])
     .map(key => `${key}=${encodeURIComponent(object[key])}`)
-    .join(`&`)
+    .join(`&`);
 
+const PortfolioPageShareMenu = props => {
+  const { url, media, title } = props;
 
-const PortfolioPageShareMenu = (props) => {
-  const { url, media, title } = props
-
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <div
@@ -46,7 +45,7 @@ const PortfolioPageShareMenu = (props) => {
           cursor: `pointer`,
           zIndex: 1,
           ...linkStyle,
-          variant: `buttons.shareMenu`,
+          variant: `buttons.shareMenu`
         })}
       >
         <MdShare />
@@ -123,10 +122,9 @@ const PortfolioPageShareMenu = (props) => {
       </div>
     </div>
   );
-}
+};
 
-export default PortfolioPageShareMenu
-
+export default PortfolioPageShareMenu;
 
 const border = `2px solid`;
 
@@ -141,9 +139,9 @@ const linkStyle = {
   justifyContent: `center`,
   boxSizing: `border-box`,
   border
-}
+};
 
 const linkAttrs = {
   target: `_blank`,
-  rel: `noopener noreferrer`,
-}
+  rel: `noopener noreferrer`
+};

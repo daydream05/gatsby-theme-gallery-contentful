@@ -6,4 +6,4 @@ const letterSpacings = {
   widest: "0.1em"
 };
 
-export default letterSpacings
+export default letterSpacings;

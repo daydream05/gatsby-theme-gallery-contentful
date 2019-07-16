@@ -9,12 +9,7 @@ const PortfolioPageMedia = props => {
 
   if (media.file.contentType === "video/mp4") {
     return (
-      <ReactPlayer
-        url={media.file.url}
-        controls
-        width="100%"
-        height="auto"
-      />
+      <ReactPlayer url={media.file.url} controls width="100%" height="auto" />
     );
   }
 

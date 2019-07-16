@@ -1,8 +1,8 @@
-import React from 'react'
-import { FaLongArrowAltLeft } from 'react-icons/fa'
-import { css } from "theme-ui"
+import React from "react";
+import { FaLongArrowAltLeft } from "react-icons/fa";
+import { css } from "theme-ui";
 
-const LeftArrow = (props) => {
+const LeftArrow = props => {
   return (
     <button
       aria-label="Previous page"
@@ -28,6 +28,6 @@ const LeftArrow = (props) => {
       />
     </button>
   );
-}
+};
 
-export default LeftArrow
+export default LeftArrow;

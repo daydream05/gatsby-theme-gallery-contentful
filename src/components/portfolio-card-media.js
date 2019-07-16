@@ -1,21 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
-import { css } from 'theme-ui'
+import React from "react";
+import PropTypes from "prop-types";
+import Img from "gatsby-image";
+import { css } from "theme-ui";
 
-import PortfolioCardVideo from './portfolio-card-video'
+import PortfolioCardVideo from "./portfolio-card-video";
 
-
-const PortfolioCardMedia = (props) => {
-  const { media, isBehindAModal } = props
+const PortfolioCardMedia = props => {
+  const { media, isBehindAModal } = props;
 
   if (media.file.contentType === "video/mp4") {
-    return (
-      <PortfolioCardVideo
-        isBehindAModal={isBehindAModal}
-        media={media}
-      />
-    )
+    return <PortfolioCardVideo isBehindAModal={isBehindAModal} media={media} />;
   }
   return (
     <div>
@@ -29,10 +23,10 @@ const PortfolioCardMedia = (props) => {
         />
       )}
     </div>
-  )
-}
+  );
+};
 
 PortfolioCardMedia.propTypes = {
-  media: PropTypes.object.isRequired,
-}
-export default PortfolioCardMedia
+  media: PropTypes.object.isRequired
+};
+export default PortfolioCardMedia;

@@ -5,4 +5,4 @@ const masonry = {
   gridSizer: {}
 };
 
-export default masonry
+export default masonry;

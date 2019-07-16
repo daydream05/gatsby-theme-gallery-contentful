@@ -1,11 +1,10 @@
-import React from 'react'
-import { DialogContent } from '@reach/dialog'
-import { css } from 'theme-ui'
+import React from "react";
+import { DialogContent } from "@reach/dialog";
+import { css } from "theme-ui";
 
-import theme from '../gatsby-plugin-theme-ui'
+import theme from "../gatsby-plugin-theme-ui";
 
-
-const CustomDialogContent = (props) => {
+const CustomDialogContent = props => {
   return (
     <DialogContent
       css={css({
@@ -21,6 +20,6 @@ const CustomDialogContent = (props) => {
       {props.children}
     </DialogContent>
   );
-}
+};
 
-export default CustomDialogContent
+export default CustomDialogContent;

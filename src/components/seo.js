@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 const siteQuery = graphql`
   query {
@@ -33,9 +33,9 @@ const SEO = ({
   imageHeight,
   video
 }) => {
-  const { site } = useStaticQuery(siteQuery)
+  const { site } = useStaticQuery(siteQuery);
 
-  const { siteUrl, siteName } = site.siteMetadata
+  const { siteUrl, siteName } = site.siteMetadata;
 
   return (
     <Helmet
@@ -44,7 +44,8 @@ const SEO = ({
       }}
       title={title}
       titleTemplate={`%s | ${siteName}`}
-      meta={[].concat(
+      meta={[]
+        .concat(
           keywords.length > 0
             ? {
                 name: `keywords`,
@@ -63,25 +64,27 @@ const SEO = ({
       {imageWidth && <meta property="og:image:width" content={imageWidth} />}
       {imageHeight && <meta property="og:image:height" content={imageHeight} />}
       {video && <meta property="og:video" content={video} />}
-      
+
       {/** Twitter cards */}
       <meta name="twitter:card" content="summary" />
       {title && <meta name="twitter:title" content={title} />}
       {description && <meta name="twitter:description" content={description} />}
       {image && <meta name="twitter:image" content={image} />}
       {imageWidth && <meta name="twitter:image:width" content={imageWidth} />}
-      {imageHeight && <meta name="twitter:image:height" content={imageHeight} />}
+      {imageHeight && (
+        <meta name="twitter:image:height" content={imageHeight} />
+      )}
       {video && <meta name="twitter:video" content={video} />}
     </Helmet>
   );
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
-  description: ``,
-}
+  description: ``
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
@@ -92,7 +95,7 @@ SEO.propTypes = {
   author: PropTypes.string,
   image: PropTypes.string,
   imageWidth: PropTypes.number,
-  imageHeight: PropTypes.number,
+  imageHeight: PropTypes.number
 };
 
-export default SEO
+export default SEO;

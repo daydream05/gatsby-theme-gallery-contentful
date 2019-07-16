@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import ReactPlayer from 'react-player'
-import PropTypes from 'prop-types'
-import { css } from 'theme-ui'
-import { Waypoint } from 'react-waypoint'
+import React, { useState } from "react";
+import ReactPlayer from "react-player";
+import PropTypes from "prop-types";
+import { css } from "theme-ui";
+import { Waypoint } from "react-waypoint";
 
-import theme from '../gatsby-plugin-theme-ui'
+import theme from "../gatsby-plugin-theme-ui";
 
 // TODO: Add autoplay options. Right now the default is
 // it will autoplay if on screen and stop playing on background.
-const PortfolioCardVideo = (props) => {
+const PortfolioCardVideo = props => {
   const { media, isBehindAModal } = props;
 
-  const [playVideo, setPlayVideo] = useState(false)
+  const [playVideo, setPlayVideo] = useState(false);
 
   return (
     <Waypoint
@@ -21,8 +21,8 @@ const PortfolioCardVideo = (props) => {
       <div
         css={css({
           display: `block`,
-          'video': {
-            display: `block`,
+          video: {
+            display: `block`
           }
         })}
       >
@@ -43,8 +43,8 @@ const PortfolioCardVideo = (props) => {
             width="100%"
             height="auto"
             style={{
-              'video': {
-                display: `block`,
+              video: {
+                display: `block`
               }
             }}
           />
@@ -62,13 +62,12 @@ const PortfolioCardVideo = (props) => {
       </div>
     </Waypoint>
   );
-}
+};
 
 PortfolioCardVideo.propTypes = {
   media: PropTypes.object.isRequired,
   autoPlay: PropTypes.bool,
-  isBehindAModal: PropTypes.bool,
-}
+  isBehindAModal: PropTypes.bool
+};
 
-export default PortfolioCardVideo
-
+export default PortfolioCardVideo;

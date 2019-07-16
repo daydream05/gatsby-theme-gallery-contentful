@@ -1,12 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import ReactMasonry from 'react-masonry-component'
-import { css } from 'theme-ui'
+import React from "react";
+import PropTypes from "prop-types";
+import ReactMasonry from "react-masonry-component";
+import { css } from "theme-ui";
 
-import PortfolioCard from "./portfolio-card"
+import PortfolioCard from "./portfolio-card";
 
-import space from '../gatsby-plugin-theme-ui/space'
-
+import space from "../gatsby-plugin-theme-ui/space";
 
 // TODO: This breaks when space is not in the power of 2
 
@@ -19,22 +18,20 @@ const gridItemWidth = [
   `calc(99.99% * 1/4 - ${space[3]}px)`,
   `calc(99.99% * 1/4 - ${space[3]}px)`,
   `calc(99.99% * 1/6 - ${space[3]}px)`
-]
-
+];
 
 const GalleryPageMasonry = ({ itemList, isBehindAModal, gutter, ...rest }) => {
-
   const masonryOptions = {
     itemSelector: ".grid-item",
     columnWidth: `.grid-sizer`,
-    gutter: space[3],
-  }
+    gutter: space[3]
+  };
 
   return (
     <div
       css={css({
         mx: [2, 2, 3, 3, 3],
-        variant: `masonry.gridContainer`,
+        variant: `masonry.gridContainer`
       })}
     >
       <ReactMasonry
@@ -47,34 +44,35 @@ const GalleryPageMasonry = ({ itemList, isBehindAModal, gutter, ...rest }) => {
           width: `100%`,
           ".grid-sizer": {
             width: gridItemWidth,
-            variant: `masonry.gridSizer`,
+            variant: `masonry.gridSizer`
           },
           ".grid-item": {
             marginBottom: [5, 5, 5, 3],
             mx: [2, 2, 2],
             width: gridItemWidth,
-            variant: `masonry.gridItem`,
+            variant: `masonry.gridItem`
           }
         })}
         {...rest}
       >
         <div className="grid-sizer" />
-        {itemList && itemList.map((item, index) => {
-          return (
-            <PortfolioCard
-              isBehindAModal={isBehindAModal}
-              key={`${item.id}-${index}`}
-              className={`grid-item`}
-              title={item.title}
-              media={item.media}
-              category={item.category}
-              linkTo={item.fields.path}
-              description={
-                item.description && item.description.internal.content
-              }
-            />
-          );
-        })}
+        {itemList &&
+          itemList.map((item, index) => {
+            return (
+              <PortfolioCard
+                isBehindAModal={isBehindAModal}
+                key={`${item.id}-${index}`}
+                className={`grid-item`}
+                title={item.title}
+                media={item.media}
+                category={item.category}
+                linkTo={item.fields.path}
+                description={
+                  item.description && item.description.internal.content
+                }
+              />
+            );
+          })}
       </ReactMasonry>
     </div>
   );
@@ -92,15 +90,15 @@ GalleryPageMasonry.propTypes = {
         })
       }),
       linkState: PropTypes.object,
-      description: PropTypes.object,
+      description: PropTypes.object
     })
   ).isRequired,
   isBehindAModal: PropTypes.bool,
-  gutter: PropTypes.number,
+  gutter: PropTypes.number
 };
 
 GalleryPageMasonry.defaultProps = {
-  gutter: space[3],
-}
+  gutter: space[3]
+};
 
-export default GalleryPageMasonry
+export default GalleryPageMasonry;
