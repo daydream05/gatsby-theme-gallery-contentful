@@ -3,6 +3,7 @@ module.exports = (themeOptions) => {
     siteMetadata: {
       basePath: themeOptions.basePath,
       baseTitle: themeOptions.baseTitle || `Portfolio`,
+      baseSubtitle: themeOptions.baseSubtitle || ``,
       siteUrl: themeOptions.siteMetadata.siteUrl,
       siteName: themeOptions.siteMetadata.siteName,
     },

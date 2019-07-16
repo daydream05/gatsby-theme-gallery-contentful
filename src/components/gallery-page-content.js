@@ -14,7 +14,10 @@ const GalleryPageContent = ({ data, isBehindAModal }) => {
         pt: [4]
       })}
     >
-      <GalleryPageHeader title={data.site.siteMetadata.baseTitle} />
+      <GalleryPageHeader
+        title={data.site.siteMetadata.baseTitle}
+        subTitle={data.site.siteMetadata.subTitle}
+      />
       <GalleryPageMasonry
         itemList={portfolioList}
         isBehindAModal={isBehindAModal}

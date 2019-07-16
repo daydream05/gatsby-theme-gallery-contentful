@@ -6,13 +6,13 @@ import GalleryPageTitle from './gallery-page-title'
 import GalleryPageSubtitle from './gallery-page-subtitle'
 
 const GalleryPageHeader = (props) => {
-  const { title, subTitle } = props
+  const { title, subTitle, ...rest } = props
   return (
     <header
       css={css({
         mx: [2, 2, 3, 4, 4, 6]
       })}
-      {...props}
+      {...rest}
     >
       <GalleryPageTitle>{title}</GalleryPageTitle>
       <GalleryPageSubtitle>{subTitle}</GalleryPageSubtitle>

@@ -9,6 +9,7 @@ export const galleryQuery = graphql`
     site {
       siteMetadata {
         baseTitle
+        baseSubtitle
       }
     }
     allContentfulPortfolio {
