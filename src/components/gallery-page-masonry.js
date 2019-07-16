@@ -5,17 +5,19 @@ import { css } from 'theme-ui'
 
 import PortfolioCard from "./portfolio-card"
 
-import theme from '../gatsby-plugin-theme-ui'
+import tokens from '../utils/tokens'
+
+console.log(tokens.space)
 
 const gridItemWidth = [
-  `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/1 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/3 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/4 - ${theme.space[3]}px)`,
-  `calc(99.99% * 1/6 - ${theme.space[3]}px)`
+  `calc(99.99% * 1/1 - ${tokens.space[3]}px)`,
+  `calc(99.99% * 1/1 - ${tokens.space[3]}px)`,
+  `calc(99.99% * 1/1 - ${tokens.space[3]}px)`,
+  `calc(99.99% * 1/3 - ${tokens.space[3]}px)`,
+  `calc(99.99% * 1/3 - ${tokens.space[3]}px)`,
+  `calc(99.99% * 1/4 - ${tokens.space[3]}px)`,
+  `calc(99.99% * 1/4 - ${tokens.space[3]}px)`,
+  `calc(99.99% * 1/6 - ${tokens.space[3]}px)`
 ]
 
 const GalleryPageMasonry = ({ itemList, isBehindAModal, gutter, ...rest }) => {
@@ -23,7 +25,7 @@ const GalleryPageMasonry = ({ itemList, isBehindAModal, gutter, ...rest }) => {
   const masonryOptions = {
     itemSelector: ".grid-item",
     columnWidth: `.grid-sizer`,
-    gutter: theme.space[3],
+    gutter: tokens.space[3],
   }
 
   return (
@@ -94,7 +96,7 @@ GalleryPageMasonry.propTypes = {
 };
 
 GalleryPageMasonry.defaultProps = {
-  gutter: theme.space[3],
+  gutter: tokens.space[3],
 }
 
 export default GalleryPageMasonry

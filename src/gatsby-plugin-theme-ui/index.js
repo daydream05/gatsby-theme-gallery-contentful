@@ -1,4 +1,4 @@
-import { base } from '@theme-ui/presets'
+import { funk } from '@theme-ui/presets'
 
 const breakpoints = [`320px`, `550px`, `750px`, `1000px`, `1200px`, `1600px`, `2800px`];
 
@@ -67,8 +67,10 @@ const masonry = {
   gridSizer: {}
 };
 
+console.log(funk)
+
 export default {
-  ...base,
+  ...funk,
   mediaQueries,
   breakpoints,
   zIndices,

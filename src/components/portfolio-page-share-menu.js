@@ -126,9 +126,6 @@ export default PortfolioPageShareMenu
 
 const border = `2px solid rgba(0,0,0,.2)`;
 
-const openStyle = {
-
-}
 const linkStyle = {
   color: `black`,
   opacity: 1,

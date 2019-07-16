@@ -7,7 +7,7 @@ const PortfolioPageDescription = (props) => {
       css={css({
         fontFamily: 'body',
         color: `black`,
-        mb: [4],
+        mb: [0],
       })}
       {...props}
     >
