@@ -14,11 +14,8 @@ const portfolioCard = {
     mt: 0
   },
   textOverlay: {
-    background: `linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 3%,
-      rgb(0, 0, 0) 100%
-    )`
+    // this shows nothing right now,
+    // we can't use linear gradient for different modes
   },
   category: {
     fontFamily: `body`,
