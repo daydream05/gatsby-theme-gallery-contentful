@@ -55,7 +55,10 @@ const PortfolioPageShareMenu = (props) => {
           display: `flex`,
           flexDirection: [`row`, `row`, `row`, `row-reverse`],
           transition: `0.3s transform`,
-          transform: open ? `translateX(0)` : `translateX(100%)`,
+          transform: open ? `translateX(-100%)` : `translateX(0%)`,
+          [theme.mediaQueries.md]: {
+            transform: open ? `translateX(0)` : `translateX(100%)`
+          }
         })}
       >
         <a
