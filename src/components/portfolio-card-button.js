@@ -24,17 +24,17 @@ const PortfolioCardButton = (props) => {
         transition: `0.3s`,
         mt: [0, 0, 1],
         ":hover, :focus": {
-          backgroundColor: `muted`,
+          backgroundColor: `text`,
           transition: `0.3s`,
-          color: `text`
+          color: `white`
         },
         [theme.mediaQueries.md]: {
-          color: `muted`,
-          border: `2px solid muted`,
+          color: `white`,
+          border: `2px solid white`,
           backgroundColor: `unset`,
           ":hover, :focus": {
-            color: `text`,
-            backgroundColor: `muted`
+            color: `black`,
+            backgroundColor: `background`
           }
         },
         variant: "buttons.secondary"

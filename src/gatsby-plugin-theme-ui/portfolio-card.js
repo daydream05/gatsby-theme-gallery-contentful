@@ -9,7 +9,7 @@ const portfolioCard = {
     fontFamily: `heading`,
     fontSize: [3, 3, 3, 3],
     letterSpacing: 1,
-    color: [`text`, `text`, `text`, `muted`],
+    color: [`text`, `text`, `text`, `background`],
     mb: 4,
     mt: 0
   },
@@ -19,14 +19,14 @@ const portfolioCard = {
   },
   category: {
     fontFamily: `body`,
-    color: [`text`, `text`, `text`, `muted`],
+    color: [`text`, `text`, `text`, `background`],
     letterSpacing: `widest`,
     fontSize: [0],
     opacity: 0.8,
     mt: [0]
   },
   description: {
-    color: [`text`, `text`, `text`, `muted`],
+    color: [`text`, `text`, `text`, `background`],
     fontFamily: `body`,
     lineHeight: 1.8,
     fontSize: [2, 2, 2, 1],
