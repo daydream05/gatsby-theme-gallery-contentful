@@ -79,18 +79,20 @@ const GalleryPageMasonry = ({ itemList, isBehindAModal, gutter, ...rest }) => {
 };
 
 GalleryPageMasonry.propTypes = {
-  itemList: PropTypes.shape({
-    title: PropTypes.string,
-    media: PropTypes.object,
-    category: PropTypes.string,
-    linkTo: PropTypes.shape({
-      fields: PropTypes.shape({
-        path: PropTypes.string
-      })
-    }),
-    linkState: PropTypes.object,
-    description: PropTypes.object,
-  }).isRequired,
+  itemList: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      media: PropTypes.object,
+      category: PropTypes.string,
+      linkTo: PropTypes.shape({
+        fields: PropTypes.shape({
+          path: PropTypes.string
+        })
+      }),
+      linkState: PropTypes.object,
+      description: PropTypes.object,
+    })
+  ).isRequired,
   isBehindAModal: PropTypes.bool,
   gutter: PropTypes.number,
 };
