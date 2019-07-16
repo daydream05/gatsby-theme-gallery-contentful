@@ -11,6 +11,7 @@ import colors from './colors'
 import galleryPage from './gallery-page'
 import space from './space'
 
+console.log(portfolioCard)
 const baseTheme = merge(
   funk,
   {
@@ -25,5 +26,7 @@ const baseTheme = merge(
     galleryPage
   }
 )
+
+console.log(baseTheme)
 
 export default baseTheme

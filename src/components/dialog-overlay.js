@@ -7,7 +7,7 @@ const CustomDialogOverlay = (props) => {
     <DialogOverlay
       css={css({
         zIndex: `modal`,
-        background: "hsla(0,4%,95%,.95)",
+        bg: `transparentWhite`,
         py: 4,
         px: [3, 3, 3, 4, 6, 0],
         variant: `dialog.overlay`
