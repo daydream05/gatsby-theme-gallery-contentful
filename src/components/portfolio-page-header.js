@@ -42,7 +42,7 @@ const PortfolioPageHeader = props => {
           {description}
         </PortfolioPageDescription>
       )}
-      <PortfolioPageShareMenu url={pageUrl} media={media.file.url} />
+      <PortfolioPageShareMenu url={pageUrl} media={media && media.file.url} />
     </header>
   );
 };

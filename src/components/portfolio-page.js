@@ -23,7 +23,7 @@ const PortfolioPage = ({ data, location }) => {
 
   const { title, description, shareImage, media } = data.contentfulPortfolio;
 
-  const isVideo = media.file.contentType === `video/mp4`;
+  const isVideo = media && media.file.contentType === `video/mp4`;
 
   return (
     <Layout location={location} isModal={isModal}>
